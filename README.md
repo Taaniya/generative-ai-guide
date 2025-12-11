@@ -6,6 +6,7 @@ References to multiple topics in Generative AI -
 * What is it? - https://modelcontextprotocol.io/docs/getting-started/intro
 * DeepLearning.AI Course - [MCP: Build Rich-Context AI Apps with Anthropic](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/information)
 * Anthropic blog - [Introducing MCP, Nov 2024](https://www.anthropic.com/news/model-context-protocol)
+* Tutorial - [Deep dive into MCP, Gaurav Sen](https://youtu.be/uBL0siiliGo?si=5KGcbqi09vLhhZNa)
 
 
 
