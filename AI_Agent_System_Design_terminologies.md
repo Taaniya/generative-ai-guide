@@ -46,3 +46,27 @@ Reference -
 * [Effectively building AI agents on AWS Serverless](https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-memory-building-context-aware-agents/#:~:text=The%20memory%20problem%20in%20AI%20agents&text=When%20implementing%20memory%20for%20AI,patterns%20that%20matter%20to%20users.)
 * [Amazon Bedrock AgentCore Memory: Building context-aware agents](https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-memory-building-context-aware-agents/#:~:text=The%20memory%20problem%20in%20AI%20agents&text=When%20implementing%20memory%20for%20AI,patterns%20that%20matter%20to%20users.)
 
+#### Stateless vs stateful AI agents
+**Stateful AI agents -**
+* Stateful AI agents retain memory of past interactions (context) to inform future decisions, allowing for context-aware, complex, multi-turn, and personalized tasks/ conversations over time
+
+**Stateless agents -**
+* Stateless agents treat each request independently with no memory, offering faster, simpler, and more scalable performance suitable for isolated tasks
+
+**Key differences -**
+1. Memory & context:
+   - Stateful agents store user preferences, conversation history and intermediate steps. 
+   - Stateless agents (like goldfish) forget everything between interactions, requiring full context in every request.
+2. Use case:
+   - Stateful: Personalized assistants, complex workflow orchestration, multi-step planning.
+   - Stateless: Single-turn Q&A, simple chatbots, spam filters.
+3. Scalability:
+   - Stateless systems are easier to scale using load balancing, as any server can handle a new request.
+   - Stateful systems are harder to scale because they require managing session data across requests.
+4. Performance:
+   - Stateful agents are more complex to implement and resource-intensive.
+   - Stateless agents are typically faster and cheaper.
+
+References -
+https://tacnode.io/post/stateful-vs-stateless-ai-agents-practical-architecture-guide-for-developers
+
