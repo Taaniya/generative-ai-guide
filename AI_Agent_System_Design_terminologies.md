@@ -29,7 +29,7 @@ used to prevent system failures, manage API costs, and handle uneven workloads.
 References -
 * https://fast.io/resources/ai-agent-rate-limiting/
 * https://stackoverflow.com/questions/69697796/what-is-the-difference-between-rate-limiting-and-back-pressure
-* [How AI Agents Are Changing API Rate Limit Approaches](https://nordicapis.com/how-ai-agents-are-changing-api-rate-limit-approaches/#:~:text=Traditional%20approaches%20to%20rate%20limiting,indicating%20a%20typical%20DDoS%20attack).)
+* [How AI Agents Are Changing API Rate Limit Approaches](https://nordicapis.com/how-ai-agents-are-changing-api-rate-limit-approaches/#:~:text=Traditional%20approaches%20to%20rate%20limiting,indicating%20a%20typical%20DDoS%20attack)
 
 
 #### Why is session state management critical for agentic workflows?
