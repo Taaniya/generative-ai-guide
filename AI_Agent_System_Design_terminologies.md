@@ -1,6 +1,7 @@
 ## Concepts -
 1. [Backpressure and rate limiting](#what-is-backpressure-and-rate-limiting-why-is-it-imposed)
-2. 
+2. [Why is session state management required for agentic workflows?]()
+3. How to build stateful experience with stateless agentic app for production?
 
    
 #### What is backpressure and Rate limiting? Why is it imposed?
@@ -24,6 +25,21 @@ used to prevent system failures, manage API costs, and handle uneven workloads.
 * Goal: Manage budget, control complex, multi-step reasoning processes, and prevent runaway agents.
 * Metrics: More granular; often tracks tokens per agent, total tokens per task, and cost per workflow.
 * Agent rate limits are about application behavior (how much reasoning/token usage the agent is allowed)
+
+
+#### Why is session state management critical for agentic workflows?
+* Allows agents to track goals across interactions
+* Enables coherent conversations, interactions, retain context, provide personalized experiences
+* Without state management, each prompt is handled in isolation, making it impossible for the agent to refer prior context, track ongoing tasks.
+
+
+#### How to build stateful experience with stateless agentic app for production?
+* Since cloud environments, need applications to be stateless and scalable, the solution is to externalize state to a persitent storage
+* This lets an agent to reconstruct prior context e.g., build conversation history on demand, delivering a seamless stateful experience while keeping the agentic app itself stateless for scalability and resilience.
+
+
+Reference -
+* https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-memory-building-context-aware-agents/#:~:text=The%20memory%20problem%20in%20AI%20agents&text=When%20implementing%20memory%20for%20AI,patterns%20that%20matter%20to%20users.
 
 References -
 * https://fast.io/resources/ai-agent-rate-limiting/
