@@ -18,10 +18,10 @@
   - https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/introduction.html
 
 * **Memory augmented agent -**
-* Memory-augmented agents are enhanced with the ability to store, retrieve, and reason using short-term and long-term memory.
-* This allows them to maintain context across multiple tasks, sessions, and interactions, which produces more coherent, personalized, and strategic responses.
-* Unlike stateless agents, memory-augmented agents adapt by referencing historical data, learn from prior outcomes, and make decisions that align with the user's goals, preferences, and environment.
-* https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/memory-augmented-agents.html
+  * Memory-augmented agents are enhanced with the ability to store, retrieve, and reason using short-term and long-term memory.
+  * This allows them to maintain context across multiple tasks, sessions, and interactions, which produces more coherent, personalized, and strategic responses.
+  * Unlike stateless agents, memory-augmented agents adapt by referencing historical data, learn from prior outcomes, and make decisions that align with the user's goals, preferences, and environment.
+  * https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/memory-augmented-agents.html
   
 ### Courses
 * [Agentic AI by DeepLearning.ai, Andrew Ng](https://learn.deeplearning.ai/courses/agentic-ai/information)
