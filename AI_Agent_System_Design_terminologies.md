@@ -9,17 +9,17 @@
 used to prevent system failures, manage API costs, and handle uneven workloads.
 * They ensure that agents do not overwhelm downstream services (like LLM providers or databases) with more requests than they can process.
 
-What is AI agent rate limiting?
+**What is AI agent rate limiting?**
 * AI agent rate limiting involves controlling how frequently agents make API calls, access resources, and consume credits to prevent service disruptions, manage costs, and stay within provider quotas.
 
-LLM API vs AI agent rate limiting?
-LLM API rate limits -
+**LLM API vs AI agent rate limiting?**
+**LLM API rate limits -**
 * LLM API rate limits (e.g., GPT-4, Claude) focus on protecting infrastructure, restricting RPM (requests per minute) and TPM (tokens per minute)
 * These are enforced at provider side to protect GPUs, prevent abuse, ensure stability.
 * Metrics: Rigid limits on RPM, TPM, and concurrent requests
 * LLM API limits are about system capacity (how many requests to the model)
 
-AI Agent Rate Limits (Application/Agent Side):
+**AI Agent Rate Limits (Application/Agent Side) -**
 * Agent rate limits are more dynamic, managing autonomous, multi-step workflows that generate unpredictable bursts of traffic, often requiring context-aware, adaptive rate limiting (ARL) rather than simple thresholds
 * Goal: Manage budget, control complex, multi-step reasoning processes, and prevent runaway agents.
 * Metrics: More granular; often tracks tokens per agent, total tokens per task, and cost per workflow.
