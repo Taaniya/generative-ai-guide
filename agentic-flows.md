@@ -1,11 +1,11 @@
 ### Knowledge articles 
-* Choose a design pattern for your Agentic AI system
+* **Choose a design pattern for your Agentic AI system -** 
   - This article guides us to help you choose a design pattern for your agentic AI system
   - Outlines architectural blueprints for agentic AI, shifting from simple prompting to modular, autonomous multi-agent systems that improve reliability
   - Key design patterns are categorized by complexity—deterministic, iterative, and dynamic—with selection driven by balancing cost, latency, and quality
   - https://docs.cloud.google.com/architecture/choose-design-pattern-agentic-ai-system 
 
-* Agentic AI patterns
+* **Agentic AI patterns -**
   - This guide provides a design framework and implementation approach for AI agent systems
   - It connects event-driven architectural patterns with various agentic alternatives, demonstrating how to build production-grade agent systems using cloud-native architectures
   - Also covers following topics:
