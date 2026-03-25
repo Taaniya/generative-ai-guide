@@ -17,5 +17,8 @@
       - Workflow patterns describe how multiple agents, tools, and environments interact to form autonomous systems. E.g., task orchestration, subagent delegation, observability and control etc.
   - https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/introduction.html
 
+* **Memory augmented agent -**
+* https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/memory-augmented-agents.html
+  
 ### Courses
 * [Agentic AI by DeepLearning.ai, Andrew Ng](https://learn.deeplearning.ai/courses/agentic-ai/information)
