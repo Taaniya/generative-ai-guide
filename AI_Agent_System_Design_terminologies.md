@@ -1,6 +1,6 @@
 ## Concepts -
 1. [Backpressure and rate limiting](#what-is-backpressure-and-rate-limiting-why-is-it-imposed)
-2. [Why is session state management required for agentic workflows?]()
+2. [Why is session state management required for agentic workflows?](why-is-session-state-management-critical-for-agentic-workflows)
 3. [How to build stateful experience with stateless agentic app for production?](#how-to-build-stateful-experience-with-stateless-agentic-app-for-production)
 
    
@@ -26,6 +26,11 @@ used to prevent system failures, manage API costs, and handle uneven workloads.
 * Metrics: More granular; often tracks tokens per agent, total tokens per task, and cost per workflow.
 * Agent rate limits are about application behavior (how much reasoning/token usage the agent is allowed)
 
+References -
+* https://fast.io/resources/ai-agent-rate-limiting/
+* https://stackoverflow.com/questions/69697796/what-is-the-difference-between-rate-limiting-and-back-pressure
+* https://nordicapis.com/how-ai-agents-are-changing-api-rate-limit-approaches/#:~:text=Traditional%20approaches%20to%20rate%20limiting,indicating%20a%20typical%20DDoS%20attack).
+
 
 #### Why is session state management critical for agentic workflows?
 * Allows agents to track goals across interactions
@@ -37,11 +42,6 @@ used to prevent system failures, manage API costs, and handle uneven workloads.
 * Since cloud environments, need applications to be stateless and scalable, the solution is to externalize state to a persitent storage
 * This lets an agent to reconstruct prior context e.g., build conversation history on demand, delivering a seamless stateful experience while keeping the agentic app itself stateless for scalability and resilience.
 
-
 Reference -
 * https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-memory-building-context-aware-agents/#:~:text=The%20memory%20problem%20in%20AI%20agents&text=When%20implementing%20memory%20for%20AI,patterns%20that%20matter%20to%20users.
 
-References -
-* https://fast.io/resources/ai-agent-rate-limiting/
-* https://stackoverflow.com/questions/69697796/what-is-the-difference-between-rate-limiting-and-back-pressure
-* https://nordicapis.com/how-ai-agents-are-changing-api-rate-limit-approaches/#:~:text=Traditional%20approaches%20to%20rate%20limiting,indicating%20a%20typical%20DDoS%20attack).
