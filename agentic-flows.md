@@ -22,6 +22,9 @@
   * This allows them to maintain context across multiple tasks, sessions, and interactions, which produces more coherent, personalized, and strategic responses.
   * Unlike stateless agents, memory-augmented agents adapt by referencing historical data, learn from prior outcomes, and make decisions that align with the user's goals, preferences, and environment.
   * https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/memory-augmented-agents.html
-  
+
+* [5 Principles for Building Production-Grade Agentic AI Systems](https://ranjankumar.in/5-principles-for-building-production-grade-agentic-ai-systems)
+* [The 7 GenAI Architectures Every AI Engineer Should Know](https://ranjankumar.in/building-production-ready-ai-agents-with-langgraph-a-developers-guide-to-deterministic-workflows)
+
 ### Courses
 * [Agentic AI by DeepLearning.ai, Andrew Ng](https://learn.deeplearning.ai/courses/agentic-ai/information)
