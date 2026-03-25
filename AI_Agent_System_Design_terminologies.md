@@ -2,7 +2,7 @@
 1. [Backpressure and rate limiting](#what-is-backpressure-and-rate-limiting-why-is-it-imposed)
 2. [Why is session state management required for agentic workflows?](why-is-session-state-management-critical-for-agentic-workflows)
 3. [How to build stateful experience with stateless agentic app for production?](#how-to-build-stateful-experience-with-stateless-agentic-app-for-production)
-
+4. [Stateful vs stateless AI agents](#stateless-vs-stateful-ai-agents)
    
 #### What is backpressure and Rate limiting? Why is it imposed?
 
