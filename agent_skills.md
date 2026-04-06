@@ -4,6 +4,7 @@
 
 
 **Core Components of a Skill -**
+
 Each skill typically consists of a directory containing: 
 * SKILL.md: A markdown file with YAML frontmatter (name and description) and detailed instructions.
 * Specialized Instructions: Procedural knowledge that guides the agent through complex workflows.
