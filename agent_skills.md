@@ -1,4 +1,4 @@
-**What are skills? How they work?**
+**What are skills?**
  * In the context of modern AI development, Agent Skills refer to an open standard for extending the capabilities of AI agents through modular, portable packages of instructions and resources.
  * Unlike general knowledge built into a model, a "Skill" is a specific folder that provides an agent with specialized domain expertise on demand. This allows agents to remain efficient by only loading the context they need for a particular task—a pattern known as progressive disclosure
 
