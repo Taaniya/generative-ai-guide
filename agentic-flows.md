@@ -4,6 +4,8 @@
   - Outlines architectural blueprints for agentic AI, shifting from simple prompting to modular, autonomous multi-agent systems that improve reliability
   - Key design patterns are categorized by complexity—deterministic, iterative, and dynamic—with selection driven by balancing cost, latency, and quality
   - https://docs.cloud.google.com/architecture/choose-design-pattern-agentic-ai-system 
+* **Building effective agents (Anthropic) -**: https://www.anthropic.com/engineering/building-effective-agents
+
 
 ### Agentic AI patterns -
   - This guide provides a design framework and implementation approach for AI agent systems
