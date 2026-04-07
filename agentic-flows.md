@@ -5,7 +5,7 @@
   - Key design patterns are categorized by complexity—deterministic, iterative, and dynamic—with selection driven by balancing cost, latency, and quality
   - https://docs.cloud.google.com/architecture/choose-design-pattern-agentic-ai-system 
 
-* **Agentic AI patterns -**
+### Agentic AI patterns -
   - This guide provides a design framework and implementation approach for AI agent systems
   - It connects event-driven architectural patterns with various agentic alternatives, demonstrating how to build production-grade agent systems using cloud-native architectures
   - Also covers following topics:
@@ -18,7 +18,10 @@
   - https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/introduction.html
 
 
-#### Agentic Memory 
+* Article: Single agent or multiple agents (Microsoft) - https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/single-agent-multiple-agents
+  
+
+### Agentic Memory 
 * **Memory augmented agent -**
   * Memory-augmented agents are enhanced with the ability to store, retrieve, and reason using short-term and long-term memory.
   * This allows them to maintain context across multiple tasks, sessions, and interactions, which produces more coherent, personalized, and strategic responses.
