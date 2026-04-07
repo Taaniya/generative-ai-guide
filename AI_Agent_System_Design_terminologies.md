@@ -67,6 +67,6 @@ Reference -
    - Stateful agents are more complex to implement and resource-intensive.
    - Stateless agents are typically faster and cheaper.
 
-References -
-https://tacnode.io/post/stateful-vs-stateless-ai-agents-practical-architecture-guide-for-developers
+**References -**
+* https://tacnode.io/post/stateful-vs-stateless-ai-agents-practical-architecture-guide-for-developers
 
