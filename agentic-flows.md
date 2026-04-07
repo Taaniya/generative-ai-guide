@@ -17,7 +17,6 @@
       - Workflow patterns describe how multiple agents, tools, and environments interact to form autonomous systems. E.g., task orchestration, subagent delegation, observability and control etc.
   - https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/introduction.html
 
-
 * Article: Single agent or multiple agents (Microsoft) - https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/single-agent-multiple-agents
   
 
