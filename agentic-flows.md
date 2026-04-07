@@ -17,6 +17,8 @@
       - Workflow patterns describe how multiple agents, tools, and environments interact to form autonomous systems. E.g., task orchestration, subagent delegation, observability and control etc.
   - https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/introduction.html
 
+
+#### Agentic Memory 
 * **Memory augmented agent -**
   * Memory-augmented agents are enhanced with the ability to store, retrieve, and reason using short-term and long-term memory.
   * This allows them to maintain context across multiple tasks, sessions, and interactions, which produces more coherent, personalized, and strategic responses.
@@ -26,5 +28,10 @@
 * [5 Principles for Building Production-Grade Agentic AI Systems](https://ranjankumar.in/5-principles-for-building-production-grade-agentic-ai-systems)
 * [The 7 GenAI Architectures Every AI Engineer Should Know](https://ranjankumar.in/building-production-ready-ai-agents-with-langgraph-a-developers-guide-to-deterministic-workflows)
 
+* Architecting agentic memory (You tube) - https://youtu.be/W2HVdB4Jbjs?si=opk0ywTqNaSo5itl
+* Introduction to Memory Management in AI agents - https://www.youtube.com/live/n-slj72yx8w?si=f9cwUT1uW_SnoW3b
+  
+  
 ### Courses
 * [Agentic AI by DeepLearning.ai, Andrew Ng](https://learn.deeplearning.ai/courses/agentic-ai/information)
+
