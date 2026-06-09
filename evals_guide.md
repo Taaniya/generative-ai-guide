@@ -6,3 +6,5 @@
 5. [Evals Flash cards, Hamel Husain](https://hamel.dev/notes/llm/evals/flashcards/)
 6. [Huggingface LLM evaluation guidebook](https://huggingface.co/spaces/OpenEvals/evaluation-guidebook)
 7. [Huggingface LLM course - Evaluation](https://huggingface.co/learn/llm-course/en/chapter11/5)
+8. [Golden dataset: Role in Custom LLM evals](https://arize.com/resource/golden-dataset/)
+   
