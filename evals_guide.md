@@ -9,6 +9,7 @@
 8. [Golden dataset: Role in Custom LLM evals](https://arize.com/resource/golden-dataset/)
 9. [Using LLM-as-a-judge for evaluation: A complete guide, Hamel Husain](https://hamel.dev/blog/posts/llm-judge/)
 10. [An LLM-as-a-judge won't save the product - fixing your process will](https://eugeneyan.com/writing/eval-process/)
+11. [Using LLM-as-a-judge for an automated and versatile evaluation](https://huggingface.co/learn/cookbook/llm_judge)
 
 # Eval Frameworks 
 ## Phoenix (Arize AI)
