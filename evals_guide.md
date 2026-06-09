@@ -23,4 +23,7 @@
 
 ## LangFuse
 * [LLM-as-a-judge](https://langfuse.com/docs/evaluation/evaluation-methods/llm-as-a-judge)
-* 
+
+
+## ADK
+* [Evaluating agents with ADK](https://codelabs.developers.google.com/adk-eval/instructions#0)
