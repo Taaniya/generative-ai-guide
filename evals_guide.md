@@ -3,12 +3,12 @@
 2. [Blog - Your AI product needs evals, Hamel Husain](https://hamel.dev/blog/posts/evals/index.html)
 3. [Blog - Everything you need to know about Evals (FAQ), Hamel Husain](https://hamel.dev/blog/posts/evals-faq/)
 4. [Blog - Selecting the right AI evals tool, Hamel Husain](https://hamel.dev/blog/posts/eval-tools/)
-5. [Blog - An LLM-as-a-judge won't save the product - fixing your process will](https://eugeneyan.com/writing/eval-process/)
-6. [Blog - Evals Flash cards, Hamel Husain](https://hamel.dev/notes/llm/evals/flashcards/)
-7. [Huggingface LLM evaluation guidebook](https://huggingface.co/spaces/OpenEvals/evaluation-guidebook)
-8. [Huggingface LLM course - Evaluation](https://huggingface.co/learn/llm-course/en/chapter11/5)
-9. [Golden dataset: Role in Custom LLM evals](https://arize.com/resource/golden-dataset/)
-10. [Using LLM-as-a-judge for evaluation: A complete guide, Hamel Husain](https://hamel.dev/blog/posts/llm-judge/)
+5. [Blog - Using LLM-as-a-judge for evaluation: A complete guide, Hamel Husain](https://hamel.dev/blog/posts/llm-judge/)
+6. [Blog - An LLM-as-a-judge won't save the product - fixing your process will](https://eugeneyan.com/writing/eval-process/)
+7. [Blog - Evals Flash cards, Hamel Husain](https://hamel.dev/notes/llm/evals/flashcards/)
+8. [Huggingface LLM evaluation guidebook](https://huggingface.co/spaces/OpenEvals/evaluation-guidebook)
+9. [Huggingface LLM course - Evaluation](https://huggingface.co/learn/llm-course/en/chapter11/5)
+10. [Golden dataset: Role in Custom LLM evals](https://arize.com/resource/golden-dataset/)
 11. [Huggingface Using LLM-as-a-judge for an automated and versatile evaluation](https://huggingface.co/learn/cookbook/llm_judge)
 
 # Eval Frameworks 
@@ -21,4 +21,6 @@
 * Customize eval template - https://arize.com/docs/phoenix/evaluation/tutorials/customize-eval-template
 * Pre-built eval metrics - https://arize.com/docs/phoenix/evaluation/pre-built-metrics
 
-  
+## LangFuse
+* [LLM-as-a-judge](https://langfuse.com/docs/evaluation/evaluation-methods/llm-as-a-judge)
+* 
