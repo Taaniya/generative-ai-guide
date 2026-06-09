@@ -10,6 +10,7 @@
 9. [Huggingface LLM course - Evaluation](https://huggingface.co/learn/llm-course/en/chapter11/5)
 10. [Golden dataset: Role in Custom LLM evals](https://arize.com/resource/golden-dataset/)
 11. [Huggingface Using LLM-as-a-judge for an automated and versatile evaluation](https://huggingface.co/learn/cookbook/llm_judge)
+12. [Video - Intro To Error Analysis: Creating Custom Data Annotation Apps, Hamel Husain](https://youtu.be/qH1dZ8JLLdU?si=NglOiQ2u3w26q6B2)
 
 # Eval Frameworks 
 ## Phoenix (Arize AI)
