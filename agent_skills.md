@@ -30,7 +30,7 @@ Each skill typically consists of a directory containing:
 * Portability: You can "build once and deploy everywhere"—the same skill can work in Claude.ai, Cursor, or via the Claude API.
 * Efficiency: Prevents "context bloat" by keeping irrelevant instructions out of the agent's immediate memory.
 
-**when to use skills?-**
+**When to use skills?-**
 * Use agent skills when your workflow requires flexibility, dynamic tools, or real-time decision-making
 * Agent skills are specifically designed to make workflows highly adaptable, allowing AI agents to handle conditional, edge-case, or dynamic scenarios without requiring a rigidly hardcoded path for every possibility. E.g.,
      1. Handling Specific, Use-Case-Driven Steps -
