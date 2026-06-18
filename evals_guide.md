@@ -16,6 +16,7 @@
 ## Phoenix (Arize AI)
 * Evaluation - https://arize.com/docs/phoenix/evaluation/llm-evals
 * Using human annotations for eval-driven development - https://arize.com/docs/phoenix/cookbook/human-in-the-loop-workflows-annotations/using-human-annotations-for-eval-driven-development
+* Annotate traces on the UI for analysis and dataset creation - https://arize.com/docs/phoenix/tracing/how-to-tracing/feedback-and-annotations/annotating-in-the-ui
 * Building your own evals - https://arize.com/docs/phoenix/evaluation/concepts-evals/building-your-own-evals
 * Creating datasets - https://arize.com/docs/phoenix/datasets-and-experiments/how-to-datasets/creating-datasets
 * Running evals on traces - https://arize.com/docs/phoenix/tracing/how-to-tracing/feedback-and-annotations/evaluating-phoenix-traces
