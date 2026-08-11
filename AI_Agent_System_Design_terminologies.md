@@ -6,6 +6,22 @@
    
 
 #### What is Loop engineering?
+* Loop engineering is the practice of designing automated iterative workflows where AI agents act, observe, verify, and self-correct their outputs until a goal is met, shifting the developer's role from writing single prompts to building self-governing control loops. 
+
+**Core Components of Loop Engineering:**
+* **Intent / Purpose:** A clearly defined user goal or target outcome that establishes the boundary of what the agent needs to achieve. 
+* **Action:** The operational step where the agent executes a task, such as writing code, calling an API, or searching a database. 
+* **Observation / Verifier:** An external evaluation mechanism or tool (like a compiler, linter, or test suite) that checks if the output satisfies the objective.
+* **Feedback & Adjustment:** The process where error logs or critique results are fed back into the agent so it can revise its subsequent steps. 
+* **Stopping Condition:** Explicit termination logic that stops the recursive cycle once success is reached or a compute-budget limit is hit. 
+
+
+**Prompt Engineering vs. Loop Engineering -**
+* **Prompt Engineering:** Focuses on optimizing a single instruction for a one-off model response, requiring humans to manually re-prompt upon failure.
+* **Loop Engineering:** Focuses on orchestrating the entire multi-step lifecycle, allowing the system to dynamically self-prompt and correct errors over a long-running execution
+
+**References -**
+* [What is Loop engineering - IBM](https://www.ibm.com/think/topics/loop-engineering)
 
 #### What is Harness engineering?
 
