@@ -4,6 +4,45 @@
 3. [How to build stateful experience with stateless agentic app for production?](#how-to-build-stateful-experience-with-stateless-agentic-app-for-production)
 4. [Stateful vs stateless AI agents](#stateless-vs-stateful-ai-agents)
    
+
+#### What is Loop engineering?
+
+#### What is Harness engineering?
+
+* Harness engineering is the practice of building the structured environment, tools, and feedback loops around an AI model so it can run reliably as an autonomous agent.
+* Defined as Agent = Model + Harness, it moves past simple prompt or context tuning to govern execution, verify outputs, and prevent repeat mistakes
+
+**Core Components:**
+* Guides (Feedforward): Rules, system instructions, and architecture boundaries that steer the agent before it acts.
+* Sensors (Feedback): Custom linters, tests, and validation loops that let the agent self-correct its errors.
+* State Management: Persistent logs and file-based records so an agent recovers cleanly across sessions.
+* Tool Orchestration: Sandboxes, Model Context Protocol (MCP) servers, and sub-agent spawning that expand functional range safel
+
+**Evolution Beyond Prompting:**
+* Prompt Engineering: Optimizes a single response or turn.
+* Context Engineering: Manages what information fits inside the active window.
+* Harness Engineering: Designs the operational world and safety constraints for multi-hour, autonomous tasks
+
+
+**References -**
+* [Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html)
+* [Harness design for long-running application development - Anthropic](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+* [Effective harnesses for long-running agents](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents)
+* [Harness engineering: leveraging Codex in an agent-first world](https://openai.com/index/harness-engineering/)
+* [How to build a better agent harness with traces and evals](https://arize.com/blog/improve-ai-agents-traces-evals-harness/)
+
+
+#### What is Context engineering?
+
+#### What is Prompt engineering?
+
+
+
+
+
+
+
+
 #### What is backpressure and Rate limiting? Why is it imposed?
 
 * In agentic systems—AI architectures where autonomous agents use tools, call APIs, and reason over multiple steps—backpressure and rate limiting are critical flow-control mechanisms
