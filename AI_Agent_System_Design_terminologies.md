@@ -48,9 +48,43 @@
 * [How to build a better agent harness with traces and evals](https://arize.com/blog/improve-ai-agents-traces-evals-harness/)
 
 
-#### What is Context engineering?
+#### Prompt engineering vs Context engineering vs Harness engineering
+Prompt engineering, context engineering, and harness engineering represent three progressive layers of applied AI development. Prompt engineering shapes model behavior through instruction text, context engineering curates the knowledge and data fed into the window, and harness engineering builds the outer operational system and controls for safety and reliability
 
-#### What is Prompt engineering?
+**Prompt Engineering -**
+* **Focuses on** the precise wording, role assignments, tone constraints, and few-shot examples of a single interaction.
+* **Asks the question:** "How should I phrase this instruction so the model understands what to do?"
+* **Operates at** the text and message level.
+* **Fails when** the wording is ambiguous or instructions conflict
+
+**Context Engineering -**
+* **Focuses on** managing the information ecosystem, memory, retrieval results (RAG), and tool outputs loaded into the model's window.
+* **Asks the question:** "What exact data, files, or background facts does the model need to see right now?"
+* **Operates at** the data architecture and token management level.
+* **Fails when** data is stale, irrelevant, or causes context rot/overflow
+
+
+**Harness Engineering -**
+* **Focuses on** the deterministic software scaffolding, execution loops, permissions, sandboxes, and human-in-the-loop approval gates surrounding the AI agent.
+* **Operates at** the system infrastructure and workflow governance level.
+* **Fails when** the system lacks proper retries, evaluation loops, or safety guardrails.
+
+
+**Key Differences:**
+| Dimension |	Prompt Engineering	| Context Engineering |	Harness Engineering |
+|:--------:|:--------:|:--------:|:--------:|
+| Core Focus|	Instructions & Behavior	| Knowledge & Memory	| Control & System Reliability |
+| Primary Domain	| Linguistics & Phrasing |	Data Architecture & Retrieval |	Software Architecture & Sandboxing |
+| Scope	| Single prompt/turn	| Dynamic data streams/window	| Full operational | lifecycle/loops |
+
+
+**References -**
+* [Harness Engineering vs Prompt Engineering vs Context Engineering - Atlan](https://atlan.com/know/harness-engineering-vs-prompt-engineering/)
+  
+
+
+
+
 
 
 
