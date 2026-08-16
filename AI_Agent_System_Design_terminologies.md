@@ -28,7 +28,7 @@ Core Components:
 
 
 References:
-1.  [What are AI agents? (Google Cloud](https://cloud.google.com/discover/what-are-ai-agents)
+1.  [What are AI agents? (Google Cloud)](https://cloud.google.com/discover/what-are-ai-agents)
 2.  [Architecting Agent Memory: Principles, Patterns, and Best Practices — Richmond Alake, MongoDB (Tech Talk)](https://youtu.be/W2HVdB4Jbjs?si=-H16PSXUBv8hzmZX)
 3.  [AI agents explained](https://youtu.be/Zqno_vux6d8?si=j9kLAOUmwVZTi4af)
 
