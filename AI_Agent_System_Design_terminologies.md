@@ -139,8 +139,9 @@ Memory Management in Agentic systems -
 * Memory makes agents reliable, capable and believable
 * Memory management refers to systemic organization, persistence and retrieval of different types of information needed by an agent to function effectively across interactions and sessions.
 
-  Reference -
+  References -
   * [Architecting Agent Memory: Principles, Patterns, and Best Practices — Richmond Alake, MongoDB (Tech Talk)](https://youtu.be/W2HVdB4Jbjs?si=-H16PSXUBv8hzmZX)
+  * [Blog - Bringing Attention To Memory In AI Agents and Agentic Systems (MongoDB)](https://www.mongodb.com/resources/basics/artificial-intelligence/agent-memory)
 
 
 #### What is backpressure and Rate limiting? Why is it imposed?
