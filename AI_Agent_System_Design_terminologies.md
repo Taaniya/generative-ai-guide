@@ -128,6 +128,19 @@ References -
 * [Harness Engineering vs Prompt Engineering vs Context Engineering - Atlan](https://atlan.com/know/harness-engineering-vs-prompt-engineering/)
   
 
+#### What is Agent Memory?
+It is the persistent cognitive architecture that lets an agent -
+* accumulate knowledge
+* maintain contextual awareness
+* adapt its behavior based on historical interactions and learned experiences
+
+Memory Management in Agentic systems -
+* Memory makes agents reliable, capable and believable
+* Memory management refers to systemic organization, persistence and retrieval of different types of information needed by an agent to function effectively across interactions and sessions.
+
+  Reference -
+  * [Architecting Agent Memory: Principles, Patterns, and Best Practices — Richmond Alake, MongoDB (Tech Talk)](https://youtu.be/W2HVdB4Jbjs?si=-H16PSXUBv8hzmZX)
+
 
 #### What is backpressure and Rate limiting? Why is it imposed?
 
