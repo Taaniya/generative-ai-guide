@@ -49,6 +49,23 @@ Prompt Engineering vs. Loop Engineering -
 * **Prompt Engineering:** Focuses on optimizing a single instruction for a one-off model response, requiring humans to manually re-prompt upon failure.
 * **Loop Engineering:** Focuses on orchestrating the entire multi-step lifecycle, allowing the system to dynamically self-prompt and correct errors over a long-running execution
 
+Building AI agents vs loop engineering - 
+
+* An **AI agent** is the autonomous entity powered by a large language model that reasons and executes tasks 
+* While **loop engineering** is the architectural practice of designing the iterative control systems, triggers, and stop rules that guide that agent through multiple execution cycles.
+
+AI Agent -
+
+* Definition: The actor or runtime intelligence that perceives a goal, invokes tools, and processes information.
+* Core Role: Acts as the reasoning engine; it decides what step or tool call to make next based on the current context.
+* Scope: Focuses on the "who" or "what" executing the task.
+
+Loop Engineering -
+
+* Definition: The software design and harness engineering used to build the repeating cycle (act, observe, evaluate, repeat).
+* Core Role: Manages the scaffolding—such as trigger conditions, verification steps, state persistence, and guardrails to stop infinite loops.
+* Scope: Focuses on the "how" the system controls, costs-manages, and scopes the agent's autonomous runtime.
+
 References -
 * [What is Loop engineering - IBM](https://www.ibm.com/think/topics/loop-engineering)
 
