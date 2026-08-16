@@ -6,7 +6,32 @@
 5. [Why is session state management required for agentic workflows?](why-is-session-state-management-critical-for-agentic-workflows)
 6. [How to build stateful experience with stateless agentic app for production?](#how-to-build-stateful-experience-with-stateless-agentic-app-for-production)
 7. [Stateful vs stateless AI agents](#stateless-vs-stateful-ai-agents)
-   
+
+#### AI agents
+An agent is an autonomous software system that can perceive its environment, makes independent decisions through reasoning, takes actions using tools / APIs in multiple steps in loop to achieve a goal.
+
+How AI Agents Work?
+
+AI agents function through a continuous reasoning loop: 
+* Plan: The agent breaks a main goal down into smaller, sequential steps.
+* Act: It uses external tools, software functions, or database queries to execute a step.
+* Observe: It looks at the resulting output or change in the environment.
+* Adapt: It evaluates progress and decides the next action until the task is complete.
+
+Core Components:
+
+* The Brain: Usually powered by a large language model (LLM) or foundation model that handles logic and language processing.
+* Memory: Short-term and long-term storage that allows the agent to recall past actions, user preferences, and prior context.
+* Tools: External capabilities like code execution environments, web browsers, calculators, or specific APIs.
+* Planning / Orchestration: Rules and structures that guide how the agent splits work and corrects errors.
+
+
+References:
+1.  [What are AI agents? (Google Cloud](https://cloud.google.com/discover/what-are-ai-agents)
+2.  [Architecting Agent Memory: Principles, Patterns, and Best Practices — Richmond Alake, MongoDB (Tech Talk)](https://youtu.be/W2HVdB4Jbjs?si=-H16PSXUBv8hzmZX)
+3.  [AI agents explained](https://youtu.be/Zqno_vux6d8?si=j9kLAOUmwVZTi4af)
+
+
 
 #### What is Loop engineering?
 * Loop engineering is the practice of designing automated iterative workflows where AI agents act, observe, verify, and self-correct their outputs until a goal is met, shifting the developer's role from writing single prompts to building self-governing control loops. 
