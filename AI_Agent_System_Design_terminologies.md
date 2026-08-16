@@ -3,10 +3,11 @@
 2. [What is Loop engineering?](#what-is-loop-engineering)
 3. [What is Harness engineering?](#what-is-harness-engineering)
 4. [Prompt engineering vs Context engineering vs Harness engineering](#prompt-engineering-vs-context-engineering-vs-harness-engineering)
-5. [Backpressure and rate limiting](#what-is-backpressure-and-rate-limiting-why-is-it-imposed)
-6. [Why is session state management required for agentic workflows?](why-is-session-state-management-critical-for-agentic-workflows)
-7. [How to build stateful experience with stateless agentic app for production?](#how-to-build-stateful-experience-with-stateless-agentic-app-for-production)
-8. [Stateful vs stateless AI agents](#stateless-vs-stateful-ai-agents)
+5. [What is agent memory?](#what-is-agent-memory)
+6. [Backpressure and rate limiting](#what-is-backpressure-and-rate-limiting-why-is-it-imposed)
+7. [Why is session state management required for agentic workflows?](why-is-session-state-management-critical-for-agentic-workflows)
+8. [How to build stateful experience with stateless agentic app for production?](#how-to-build-stateful-experience-with-stateless-agentic-app-for-production)
+9. [Stateful vs stateless AI agents](#stateless-vs-stateful-ai-agents)
 
 #### AI agents
 An agent is an autonomous software system that can perceive its environment, makes independent decisions through reasoning, takes actions using tools / APIs in multiple steps in loop to achieve a goal.
