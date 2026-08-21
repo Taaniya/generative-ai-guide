@@ -2,7 +2,7 @@
 
 1. Prioritize Manual error analysis:
     - Even with experience and despite the allure of automated benchmarks, the highest ROI activity is direct manual review of production logs.
-    - By looking at the data over more and more real-world interactions can help define the product roadmap and identify gaps between the expected system behavior and user mental models
+    - By looking at the data over more and more real-world interactions can help define the product roadmap and identify gaps between the expected system behavior and user mental models. This way engineers can prioritize bug fixes and feature development based on real user pain points.
 
 2. Custom data viewers over off-the-shelf dashboards:
    - Don't rely solely on off-the-shelf dashboards which often hide the nuance of specialized domains.
