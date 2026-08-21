@@ -1,6 +1,6 @@
 # References 
 1. [Define success criteria and build evals (Anthropic Documentation)](https://docs.claude.com/en/docs/test-and-evaluate/develop-tests)
-2. [Blog - Demystifying evals for AI agents - Anthropic]
+2. [Blog - Demystifying evals for AI agents - Anthropic - 2026](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
 3. [Blog - Your AI product needs evals, Hamel Husain](https://hamel.dev/blog/posts/evals/index.html)
 4. [Blog - Everything you need to know about Evals (FAQ), Hamel Husain](https://hamel.dev/blog/posts/evals-faq/)
 5. [Blog - Selecting the right AI evals tool, Hamel Husain](https://hamel.dev/blog/posts/eval-tools/)
