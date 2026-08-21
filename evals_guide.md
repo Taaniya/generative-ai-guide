@@ -12,6 +12,17 @@
    - Move away from 'vanity' scores like generic hallucination, conciseness towards error taxonomy grounded in business logic (business logic-driven evals), e.g., "tour shcheduling errors", "handoff failures").
    - By using LLMs to categorize logs based on these specific failure modes, you can prioritize your engineering roadmap with objective data
 
+4. Modeling the 'Model's Mind':
+   - Systematic review of thousands of interactions helps you predict how your system will behave. This intuition is critical when designing tools and RAG pipelines. You begin to anticipate failure scenarios—such as date parsing or tool call triggers—before they hit production.
+
+6. The 'Evergreen' Nature of Conversations:
+   - A significant takeaway for system design is that conversational AI in enterprise settings often isn't a transactional "start-to-finish" event but rather about managing state over an extended, potentially indefinite timeline. Recognizing this changes how you structure your evaluation datasets and long-term memory systems.
+
+High-Impact recommended workflow:
+* Read the raw data manually to identify gaps .
+* Take detailed, context-aware notes on why failures occur.
+* Categorize and count the most frequent failure modes to prioritize engineering bandwidth 
+* Automate the discovery of those specific categories using LLM-as-a-judge patterns 
 
 Reference - 
 * [Error Analysis: The Highest ROI Technique In AI Engineering - Hamel Husain](https://youtu.be/e2i6JbU2R-s?si=fUaeOioS6IedrEY3)
