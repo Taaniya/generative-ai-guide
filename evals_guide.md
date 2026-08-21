@@ -25,6 +25,13 @@ High-Impact recommended workflow:
 * Categorize and count the most frequent failure modes to prioritize engineering bandwidth 
 * Automate the discovery of those specific categories using LLM-as-a-judge patterns 
 
+Automate conversation labeling:
+1. Manual foundation - Manually review your conversation data to identify recurring issues (e.g., missed handoffs, incorrect scheduling) and create descriptive notes for why these failures occurred.
+2. Develop a Taxonomy: Once you understand the common failure patterns, define a clear set of categories or tags that represent these issues
+3. Use LLMs for Categorization: Leverage LLMs to automatically label your raw conversation data against your defined taxonomy. By providing the model with your conversation logs and the set of categories, it can classify new interactions without manual intervention.
+4. Aggregated Reporting: Use these automated labels to aggregate your data and count which errors occur most frequently. This turns qualitative logs into quantitative data that drives your product roadmap and engineering priorities
+
+
 Reference - 
 * [Error Analysis: The Highest ROI Technique In AI Engineering - Hamel Husain](https://youtu.be/e2i6JbU2R-s?si=fUaeOioS6IedrEY3)
 
