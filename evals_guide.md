@@ -9,9 +9,10 @@
 8. [Blog - Evals Flash cards, Hamel Husain](https://hamel.dev/notes/llm/evals/flashcards/)
 9. [Huggingface LLM evaluation guidebook](https://huggingface.co/spaces/OpenEvals/evaluation-guidebook)
 10. [Huggingface LLM course - Evaluation](https://huggingface.co/learn/llm-course/en/chapter11/5)
-11. [Golden dataset: Role in Custom LLM evals](https://arize.com/resource/golden-dataset/)
+11. [Golden dataset: Role in Custom LLM evals - Arize](https://arize.com/resource/golden-dataset/)
 12. [Huggingface Using LLM-as-a-judge for an automated and versatile evaluation](https://huggingface.co/learn/cookbook/llm_judge)
 13. [Video - Intro To Error Analysis: Creating Custom Data Annotation Apps, Hamel Husain](https://youtu.be/qH1dZ8JLLdU?si=NglOiQ2u3w26q6B2)
+14. [Blog - Pass@k vs Pass^k: Understanding agent reliability (2025)](https://www.philschmid.de/agents-pass-at-k-pass-power-k)
 
 # Eval Frameworks 
 ## Phoenix (Arize AI)
