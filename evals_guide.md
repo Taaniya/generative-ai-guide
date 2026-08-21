@@ -1,4 +1,22 @@
-# References 
+#### How is Error analysis helpful? What are the best practices while moving from generic evals to problem-specific diagnostics & domain specific observability?
+
+1. Prioritize Manual error analysis:
+    - Even with experience and despite the allure of automated benchmarks, the highest ROI activity is direct manual review of production logs.
+    - By looking at the data over more and more real-world interactions can help define the product roadmap and identify gaps between the expected system behavior and user mental models
+
+2. Custom data viewers over off-the-shelf dashboards:
+   - Don't rely solely on off-the-shelf dashboards which often hide the nuance of specialized domains.
+   - Developing a custom interface to visualize your specific data structure (e.g., voice/email/text threads), that allow you to replay the full context - human input, tool calls, model responses - removes the cognitive friction and allows for rapid, qualitative error analysis before moving to quantitative evals.
+
+3. Shift from generic scores:
+   - Move away from 'vanity' scores like generic hallucination, conciseness towards error taxonomy grounded in business logic (business logic-driven evals), e.g., "tour shcheduling errors", "handoff failures").
+   - By using LLMs to categorize logs based on these specific failure modes, you can prioritize your engineering roadmap with objective data
+
+
+Reference - 
+* [Error Analysis: The Highest ROI Technique In AI Engineering - Hamel Husain](https://youtu.be/e2i6JbU2R-s?si=fUaeOioS6IedrEY3)
+
+# Reference reading sources
 1. [Define success criteria and build evals (Anthropic Documentation)](https://docs.claude.com/en/docs/test-and-evaluate/develop-tests)
 2. [Blog - Demystifying evals for AI agents - Anthropic - 2026](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
 3. [Blog - Your AI product needs evals, Hamel Husain](https://hamel.dev/blog/posts/evals/index.html)
