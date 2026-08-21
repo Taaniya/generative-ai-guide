@@ -17,6 +17,7 @@
 
 6. The 'Evergreen' Nature of Conversations:
    - A significant takeaway for system design is that conversational AI in enterprise settings often isn't a transactional "start-to-finish" event but rather about managing state over an extended, potentially indefinite timeline. Recognizing this changes how you structure your evaluation datasets and long-term memory systems.
+   - Use Targeted Evaluations: Once you identify specific failure modes—such as a model struggling with date references relative to a conversation's start—create isolated, scenario-based tests. These "playgrounds" allow you to simulate various user inputs and refine the model's ability to handle state across the thread 
 
 High-Impact recommended workflow:
 * Read the raw data manually to identify gaps .
