@@ -1,17 +1,5 @@
-# generative-ai-guide
+# Resources
 
-References to multiple topics in Generative AI -
-
-### MCP - 
-* What is it? - https://modelcontextprotocol.io/docs/getting-started/intro
-* DeepLearning.AI Course - [MCP: Build Rich-Context AI Apps with Anthropic](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/information)
-* Anthropic blog - [Introducing MCP, Nov 2024](https://www.anthropic.com/news/model-context-protocol)
-* Tutorial - [Deep dive into MCP, Gaurav Sen](https://youtu.be/uBL0siiliGo?si=5KGcbqi09vLhhZNa)
-
-
-
-### Synthetic Data Generation -
-* https://www.deeplearning.ai/the-batch/researchers-increasingly-fine-tune-models-on-synthetic-data-but-generated-datasets-may-not-be-sufficiently-diverse-new-work-used-agentic-workflows-to-produce-diverse-synthetic-datasets/
-* https://www.nvidia.com/en-us/glossary/synthetic-data-generation/
-
-
+* [Article - AI Engineering Skills Map, Andrew Ng](https://www.linkedin.com/pulse/ai-engineering-skills-map-andrew-ng-m479c/)
+* [Article - AI Engineering Skills Map: Building and Deploying AI Applications, Andrew Ng](https://www.linkedin.com/pulse/ai-engineering-skills-map-building-deploying-applications-andrew-ng-gyn5e/)
+* [Blog - Common pitfalls when using GenAI applications, Chip Huyen](https://huyenchip.com/2025/01/16/ai-engineering-pitfalls.html)
