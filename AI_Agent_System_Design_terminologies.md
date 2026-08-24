@@ -226,6 +226,7 @@ The key participants in the MCP architecture are:
 * **MCP Client:** A component that maintains a connection to an MCP server and obtains context from an MCP server for the MCP host to use
 * **MCP Server:** A program that provides context to MCP clients
 
+References:
 * What is it? - https://modelcontextprotocol.io/docs/getting-started/intro
 * DeepLearning.AI Course - [MCP: Build Rich-Context AI Apps with Anthropic](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/information)
 * Anthropic blog - [Introducing MCP, Nov 2024](https://www.anthropic.com/news/model-context-protocol)
