@@ -8,6 +8,7 @@
 7. [Why is session state management required for agentic workflows?](why-is-session-state-management-critical-for-agentic-workflows)
 8. [How to build stateful experience with stateless agentic app for production?](#how-to-build-stateful-experience-with-stateless-agentic-app-for-production)
 9. [Stateful vs stateless AI agents](#stateless-vs-stateful-ai-agents)
+10. [What is MCP?](#what-is-mcp)
 
 #### AI agents
 An agent is an autonomous software system that can perceive its environment, makes independent decisions through reasoning, takes actions using tools / APIs in multiple steps in loop to achieve a goal.
@@ -211,4 +212,24 @@ Key differences -
 
 **References -**
 * https://tacnode.io/post/stateful-vs-stateless-ai-agents-practical-architecture-guide-for-developers
+
+#### What is MCP?
+* MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems.
+* Using MCP, AI applications like Claude or ChatGPT can connect to data sources (e.g. local files, databases), tools (e.g. search engines, calculators) and workflows (e.g. specialized prompts)—enabling them to access key information and perform tasks.
+
+Architecture:
+* MCP follows a client-server architecture where an MCP host — an AI application like Claude Code or Claude Desktop — establishes connections to one or more MCP servers.
+* The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server.
+
+The key participants in the MCP architecture are:
+* **MCP Host:** The AI application that coordinates and manages one or multiple MCP clients
+* **MCP Client:** A component that maintains a connection to an MCP server and obtains context from an MCP server for the MCP host to use
+* **MCP Server:** A program that provides context to MCP clients
+
+* What is it? - https://modelcontextprotocol.io/docs/getting-started/intro
+* DeepLearning.AI Course - [MCP: Build Rich-Context AI Apps with Anthropic](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/information)
+* Anthropic blog - [Introducing MCP, Nov 2024](https://www.anthropic.com/news/model-context-protocol)
+* Tutorial - [Deep dive into MCP, Gaurav Sen](https://youtu.be/uBL0siiliGo?si=5KGcbqi09vLhhZNa)
+
+
 
