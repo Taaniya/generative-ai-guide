@@ -9,7 +9,7 @@
    - Developing a custom interface to visualize your specific data structure (e.g., voice/email/text threads), that allow you to replay the full context - human input, tool calls, model responses - removes the cognitive friction and allows for rapid, qualitative error analysis before moving to quantitative evals.
 
 3. Shift from generic scores:
-   - Move away from 'vanity' scores like generic hallucination, conciseness towards error taxonomy grounded in business logic (business logic-driven evals), e.g., "tour shcheduling errors", "handoff failures").
+   - Move away from 'vanity' scores like generic hallucination and conciseness towards error taxonomy grounded in business logic (business logic-driven evals), e.g., "tour scheduling errors", "handoff failures").
    - By using LLMs to categorize logs based on these specific failure modes, you can prioritize your engineering roadmap with objective data
 
 4. Modeling the 'Model's Mind':
