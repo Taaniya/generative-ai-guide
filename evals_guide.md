@@ -121,6 +121,38 @@ Offline and online evals based on when they occur and their reliance on ground t
 **Note:** To catch errors related to specific, ground-truth-dependent outcomes, you must rely on **offline evaluation**, where you can test against predefined expected results using datasets derived from previous production failures
 
 
+#### What triggers an online evaluation? Can it detect every error?
+* In a production environment, an online evaluation is triggered immediately after an agent completes its execution run
+* No, online evaluations cannot detect every error. Because online evaluations run on live production traces, they lack access to the ground truth (the known correct answer) required to verify factual accuracy or semantic correctness
+* The process functions as follows:
+    * **Trace Capture:** Once the agent finishes, the entire execution trace—which contains the input, context, tool calls, and final output—is sent to an observability platform, such as LangSmith
+    * **Evaluator Execution:** Pre-defined evaluators run automatically over this captured trace to analyze specific behaviors
+    * **Metric Focused Analysis:** Because online evaluations occur in production without known "ground truth" or expected outputs, they cannot check for factual accuracy or semantic correctness. Instead, they are best suited for process-oriented and quality metrics such as trajectory, efficiency, and quality / sentiments.
+
+#### How are offline evals better for accuracy?
+* Offline evaluation is superior for measuring accuracy because it allows you to test against ground truth, which is impossible to consistently determine in real-time production settings.
+* Here is how offline evaluation ensures accuracy:
+    * **Curated Test Datasets:** You can build a dataset of specific inputs paired with verified, expected outputs. This creates a controlled benchmark to verify if the agent is producing correct information.
+    * **Regressions and Benchmarking:** By running these tests before deploying code, you can catch regressions and systematically "hill climb" to improve the agent’s reasoning capabilities over time.
+    * **Controllable Environment:** Unlike online monitoring, which is subject to the randomness of user inputs, offline evaluation provides a consistent environment to repeatedly test logic, tool usage, and reasoning
+
+#### What is an ad hoc evaluation? When to use it?
+* An ad hoc evaluation is an exploratory approach to analysis that allows you to investigate specific hunches or user feedback without needing to pre-configure automated tests
+* Key characteristics of ad hoc evaluations include:
+    * **Flexibility:** Unlike online evaluations that run automatically on all production traces, ad hoc evaluations are performed on demand
+    * **Exploratory Analysis:** It functions much like exploratory data analysis, where you can dive into specific segments of data—such as filtering for instances where a user expressed frustration—to cluster behaviors or understand patterns
+    * **Purpose:** It is used to identify failure modes or compare successful versus failed executions based on specific interests, rather than for catching general regressions
+
+You should use ad hoc evaluation when you want to perform exploratory data analysis to investigate specific hunches or address user feedback. Unlike automated online evaluations that run continuously, ad hoc evaluation is a manual, on-demand approach ideal for:
+* **Surface-level exploration:** When you need to filter traces to understand specific patterns, such as identifying when a user expressed frustration
+* **Failure mode investigation:** When you have a suspicion about a specific issue and need to dive into the data to identify why the agent is failing
+* **Comparative analysis:** When you want to manually compare successful agent executions against failed ones to spot differences in behavior or reasoning
+
+It is a highly flexible, exploratory tool, used at any time to gain insights that pre-configured tests might miss.
+
+Reference:
+* [Observability and Evals for AI Agents: A Simple Breakdown - Harrison Chase, LangChain (https://youtu.be/FDVdLrloFOw?si=fGFGYkTqYEh1hQ7t)]
+
 
 # Reference reading sources
 1. [Define success criteria and build evals (Anthropic Documentation)](https://docs.claude.com/en/docs/test-and-evaluate/develop-tests)
