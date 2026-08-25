@@ -26,10 +26,10 @@ High-Impact recommended workflow:
 * Automate the discovery of those specific categories using LLM-as-a-judge patterns 
 
 Automate conversation labeling:
-1. Manual foundation - Manually review your conversation data to identify recurring issues (e.g., missed handoffs, incorrect scheduling) and create descriptive notes for why these failures occurred.
-2. Develop a Taxonomy: Once you understand the common failure patterns, define a clear set of categories or tags that represent these issues
-3. Use LLMs for Categorization: Leverage LLMs to automatically label your raw conversation data against your defined taxonomy. By providing the model with your conversation logs and the set of categories, it can classify new interactions without manual intervention.
-4. Aggregated Reporting: Use these automated labels to aggregate your data and count which errors occur most frequently. This turns qualitative logs into quantitative data that drives your product roadmap and engineering priorities
+1. **Manual foundation:** Manually review your conversation data to identify recurring issues (e.g., missed handoffs, incorrect scheduling) and create descriptive notes for why these failures occurred.
+2. **Develop a Taxonomy:** Once you understand the common failure patterns, define a clear set of categories or tags that represent these issues
+3. **Use LLMs for Categorization:** Leverage LLMs to automatically label your raw conversation data against your defined taxonomy. By providing the model with your conversation logs and the set of categories, it can classify new interactions without manual intervention.
+4. **Aggregated Reporting:** Use these automated labels to aggregate your data and count which errors occur most frequently. This turns qualitative logs into quantitative data that drives your product roadmap and engineering priorities
 
 Reference - 
 * [Error Analysis: The Highest ROI Technique In AI Engineering - Hamel Husain](https://youtu.be/e2i6JbU2R-s?si=fUaeOioS6IedrEY3)
@@ -94,6 +94,31 @@ Key scenarios for running offline evaluations include:
 * **Regression testing:** You should maintain a set of core tasks that your agent must always pass. Running these periodically or with every commit helps catch regressions, ensuring that new changes don't break existing, stable functionality.
 * **Benchmarking and improvement:** Beyond just checking for failures, you can use a benchmark dataset to "hill climb" and systematically improve your agent's reasoning capabilities over time
 * **Fixing production issues:** When a user reports a failure in production, you should capture that trace, create a test case from it, and use offline evaluation to verify your fix before updating the agent
+
+
+#### How do you automate offline test cases?
+* Automating offline test generation for AI agents centers on utilizing production traces as the foundation for your evaluation datasets. Since agent behavior is emergent and unpredictable until deployed, production is the primary site for discovering where your agent fails.
+* Here is the workflow for converting these production failures into automated offline tests:
+    * **Identify the Failure:** When a user reports incorrect behavior or an evaluation flag highlights an issue, you locate the specific production trace in your observability tool.
+    * **Extract State:** You capture the exact state at the point of failure, including the full conversation history, the specific inputs, and the files or tools available to the agent at that moment.
+    * **Sanitize Data:** If the trace contains sensitive user information, you scrub or anonymize the data to ensure it is safe to use in a testing environment.
+    * **Create the Test Case:** The sanitized state is saved as a new test case in your evaluation suite. This allows you to recreate the exact condition that caused the error .
+    * **Run Offline Evals:** You can then run this new test case—alongside your existing benchmark dataset—using offline evaluation to verify that your code or prompt adjustments fix the issue without causing regressions.
+
+#### What is online evaluation? How is it different from offline evals?
+Online evaluation measures the performance of Agents on live production traffic after launch.
+Offline and online evals based on when they occur and their reliance on ground truth:
+* **Offline Evaluation:** Conducted before production deployment. It involves building a dataset of inputs and known ground truth outputs to catch regressions and perform benchmarking. It serves as a way to test logic changes against a standard.
+* **Online Evaluation:** Runs in production immediately after an agent executes. Because it happens in real-time on live user data, it cannot rely on ground truth. Instead, it focuses on monitoring metrics like trajectory, efficiency, and quality to flag issues as they happen.
+
+#### What metrics are best for online evaluation?
+* For online evaluation—which occurs in real-time within production environments—you cannot rely on "ground truth" or expected outputs because production interactions are unpredictable. Instead, metrics focus on **monitoring process**, **quality**, and **efficiency** rather than simple correctness.
+* Key areas for online metrics include:
+    * **Trajectory tracking:** Monitoring the steps an agent takes to ensure it is not looping unnecessarily or getting stuck in invalid states
+    * **Efficiency metrics:** Measuring the cost, latency, or number of tool calls required to complete a task
+    * **Quality assessment:** Using secondary model-based evaluators or sentiment analysis to flag potential issues like user frustration or non-compliant responses 
+
+**Note:** To catch errors related to specific, ground-truth-dependent outcomes, you must rely on **offline evaluation**, where you can test against predefined expected results using datasets derived from previous production failures
 
 
 
