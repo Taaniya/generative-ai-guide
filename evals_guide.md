@@ -69,6 +69,22 @@ Agent evaluation shifts from testing code paths to testing reasoning and context
     * This feedback loop is the foundation of production-grade agent reliability.
 
 
+#### How are observability and evaluations tightly coupled?
+* In the context of AI agents, observability and evaluation are tightly coupled because production traces serve as the source of truth.
+* Unlike traditional software where the code is the primary point of debugging, agentic behavior is non-deterministic and emerges only when users interact with the system
+
+This coupling manifests in several key ways:
+* Production-to-Offline Pipeline:
+    * Because you often cannot predict every failure mode before deployment, production traces become your primary dataset for offline evaluation.
+    * When an agent fails in production, builders extract the specific state (messages, tool outputs) from the trace to create a reproducible offline test case.
+    * This allows developers to fix the logic and verify the correction before redeploying.
+* Continuous Feedback Loops:
+    * While online evaluations monitor live traffic to identify process issues like efficiency or unexpected trajectories, they feed insights back into the development lifecycle.
+    * These insights often highlight new edge cases that were previously unidentified, prompting the creation of new  benchmarks to prevent future regressions.
+* Shared Observability Primitives:
+    * Both evaluation methods rely on the same observability infrastructure—runs, traces, and threads.
+    * By maintaining a consistent mental model and data structure for these execution steps, developers can seamlessly switch between manual debugging, ad-hoc analysis, and automated testing
+
 
 
 # Reference reading sources
