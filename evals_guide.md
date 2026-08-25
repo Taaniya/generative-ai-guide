@@ -1,4 +1,16 @@
-### How is Error analysis helpful? What are the best practices while moving from generic evals to problem-specific diagnostics & domain specific observability?
+## Contents:
+* [How is Error analysis helpful?](#how-is-error-analysis-helpful-what-are-the-best-practices-while-moving-from-generic-evals-to-problem-specific-diagnostics--domain-specific-observability)
+* [What is the paradigm shift in observability and evals from traditional deterministic software engineering to non-deterministic agentic systems?](#what-is-the-paradigm-shift-in-observability-and-evals-from-traditional-deterministic-software-engineering-to-non-deterministic-agentic-systems)
+* [How are observability and evaluations tightly coupled?](#how-are-observability-and-evaluations-tightly-coupled)
+* [What is offline evaluation? When should we run offline evaluations?](#what-is-offline-evaluation-when-should-we-run-offline-evaluations)
+* [How do you automate offline test cases?](#how-do-you-automate-offline-test-cases)
+* [What is online evaluation? How is it different from offline evals?](#what-is-online-evaluation-how-is-it-different-from-offline-evals)
+* [What metrics are best for online evaluation?](#what-metrics-are-best-for-online-evaluation)
+* [What triggers an online evaluation? Can it detect every error?](#what-triggers-an-online-evaluation-can-it-detect-every-error)
+* [How are offline evals better for accuracy?](#how-are-offline-evals-better-for-accuracy)
+* [What is an ad hoc evaluation? When should it be used?](#what-is-an-ad-hoc-evaluation-when-should-it-be-used)
+
+### How is Error analysis helpful? What are the best practices while moving from generic evals to problem-specific diagnostics & domain-specific observability?
 
 1. Prioritize Manual error analysis:
     - Even with experience and despite the allure of automated benchmarks, the highest ROI activity is direct manual review of production logs.
@@ -136,7 +148,7 @@ Offline and online evals based on when they occur and their reliance on ground t
     * **Regressions and Benchmarking:** By running these tests before deploying code, you can catch regressions and systematically "hill climb" to improve the agent’s reasoning capabilities over time.
     * **Controllable Environment:** Unlike online monitoring, which is subject to the randomness of user inputs, offline evaluation provides a consistent environment to repeatedly test logic, tool usage, and reasoning
 
-### What is an ad hoc evaluation? When to use it?
+### What is an ad hoc evaluation? When should it be used?
 * An ad hoc evaluation is an exploratory approach to analysis that allows you to investigate specific hunches or user feedback without needing to pre-configure automated tests
 * Key characteristics of ad hoc evaluations include:
     * **Flexibility:** Unlike online evaluations that run automatically on all production traces, ad hoc evaluations are performed on demand
