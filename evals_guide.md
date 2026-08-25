@@ -85,6 +85,16 @@ This coupling manifests in several key ways:
     * Both evaluation methods rely on the same observability infrastructure—runs, traces, and threads.
     * By maintaining a consistent mental model and data structure for these execution steps, developers can seamlessly switch between manual debugging, ad-hoc analysis, and automated testing
 
+#### What is offline evaluation? When should we run offline evaluations?
+* Offline evaluation happens in a controlled environment and tests an AI agent against a fixed dataset.
+* You should run offline evaluations before deploying your agent to production. This process is critical for ensuring reliability and catching potential issues early.
+
+Key scenarios for running offline evaluations include:
+* **Before each deployment:** It is common to run a battery of tests before shipping new code to production to ensure everything is working as expected
+* **Regression testing:** You should maintain a set of core tasks that your agent must always pass. Running these periodically or with every commit helps catch regressions, ensuring that new changes don't break existing, stable functionality.
+* **Benchmarking and improvement:** Beyond just checking for failures, you can use a benchmark dataset to "hill climb" and systematically improve your agent's reasoning capabilities over time
+* **Fixing production issues:** When a user reports a failure in production, you should capture that trace, create a test case from it, and use offline evaluation to verify your fix before updating the agent
+
 
 
 # Reference reading sources
