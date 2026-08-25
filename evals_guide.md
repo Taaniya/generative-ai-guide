@@ -1,4 +1,4 @@
-#### How is Error analysis helpful? What are the best practices while moving from generic evals to problem-specific diagnostics & domain specific observability?
+### How is Error analysis helpful? What are the best practices while moving from generic evals to problem-specific diagnostics & domain specific observability?
 
 1. Prioritize Manual error analysis:
     - Even with experience and despite the allure of automated benchmarks, the highest ROI activity is direct manual review of production logs.
@@ -34,7 +34,7 @@ Automate conversation labeling:
 Reference - 
 * [Error Analysis: The Highest ROI Technique In AI Engineering - Hamel Husain](https://youtu.be/e2i6JbU2R-s?si=fUaeOioS6IedrEY3)
 
-#### What is the paradigm shift in observability and evals from traditional deterministic software engineering to non-deterministic agentic systems? 
+### What is the paradigm shift in observability and evals from traditional deterministic software engineering to non-deterministic agentic systems? 
 1. The Shift to Emergent Behavior:
    * Unlike traditional software where source code is the sole source of truth, agentic systems are non-deterministic.
    * Behavior is emergent, driven by natural language inputs and dynamic tool-use.
@@ -69,7 +69,7 @@ Agent evaluation shifts from testing code paths to testing reasoning and context
     * This feedback loop is the foundation of production-grade agent reliability.
 
 
-#### How are observability and evaluations tightly coupled?
+### How are observability and evaluations tightly coupled?
 * In the context of AI agents, observability and evaluation are tightly coupled because production traces serve as the source of truth.
 * Unlike traditional software where the code is the primary point of debugging, agentic behavior is non-deterministic and emerges only when users interact with the system
 
@@ -85,7 +85,7 @@ This coupling manifests in several key ways:
     * Both evaluation methods rely on the same observability infrastructure—runs, traces, and threads.
     * By maintaining a consistent mental model and data structure for these execution steps, developers can seamlessly switch between manual debugging, ad-hoc analysis, and automated testing
 
-#### What is offline evaluation? When should we run offline evaluations?
+### What is offline evaluation? When should we run offline evaluations?
 * Offline evaluation happens in a controlled environment and tests an AI agent against a fixed dataset.
 * You should run offline evaluations before deploying your agent to production. This process is critical for ensuring reliability and catching potential issues early.
 
@@ -96,7 +96,7 @@ Key scenarios for running offline evaluations include:
 * **Fixing production issues:** When a user reports a failure in production, you should capture that trace, create a test case from it, and use offline evaluation to verify your fix before updating the agent
 
 
-#### How do you automate offline test cases?
+### How do you automate offline test cases?
 * Automating offline test generation for AI agents centers on utilizing production traces as the foundation for your evaluation datasets. Since agent behavior is emergent and unpredictable until deployed, production is the primary site for discovering where your agent fails.
 * Here is the workflow for converting these production failures into automated offline tests:
     * **Identify the Failure:** When a user reports incorrect behavior or an evaluation flag highlights an issue, you locate the specific production trace in your observability tool.
@@ -105,13 +105,13 @@ Key scenarios for running offline evaluations include:
     * **Create the Test Case:** The sanitized state is saved as a new test case in your evaluation suite. This allows you to recreate the exact condition that caused the error .
     * **Run Offline Evals:** You can then run this new test case—alongside your existing benchmark dataset—using offline evaluation to verify that your code or prompt adjustments fix the issue without causing regressions.
 
-#### What is online evaluation? How is it different from offline evals?
+### What is online evaluation? How is it different from offline evals?
 Online evaluation measures the performance of Agents on live production traffic after launch.
 Offline and online evals based on when they occur and their reliance on ground truth:
 * **Offline Evaluation:** Conducted before production deployment. It involves building a dataset of inputs and known ground truth outputs to catch regressions and perform benchmarking. It serves as a way to test logic changes against a standard.
 * **Online Evaluation:** Runs in production immediately after an agent executes. Because it happens in real-time on live user data, it cannot rely on ground truth. Instead, it focuses on monitoring metrics like trajectory, efficiency, and quality to flag issues as they happen.
 
-#### What metrics are best for online evaluation?
+### What metrics are best for online evaluation?
 * For online evaluation—which occurs in real-time within production environments—you cannot rely on "ground truth" or expected outputs because production interactions are unpredictable. Instead, metrics focus on **monitoring process**, **quality**, and **efficiency** rather than simple correctness.
 * Key areas for online metrics include:
     * **Trajectory tracking:** Monitoring the steps an agent takes to ensure it is not looping unnecessarily or getting stuck in invalid states
@@ -121,7 +121,7 @@ Offline and online evals based on when they occur and their reliance on ground t
 **Note:** To catch errors related to specific, ground-truth-dependent outcomes, you must rely on **offline evaluation**, where you can test against predefined expected results using datasets derived from previous production failures
 
 
-#### What triggers an online evaluation? Can it detect every error?
+### What triggers an online evaluation? Can it detect every error?
 * In a production environment, an online evaluation is triggered immediately after an agent completes its execution run
 * No, online evaluations cannot detect every error. Because online evaluations run on live production traces, they lack access to the ground truth (the known correct answer) required to verify factual accuracy or semantic correctness
 * The process functions as follows:
@@ -129,14 +129,14 @@ Offline and online evals based on when they occur and their reliance on ground t
     * **Evaluator Execution:** Pre-defined evaluators run automatically over this captured trace to analyze specific behaviors
     * **Metric Focused Analysis:** Because online evaluations occur in production without known "ground truth" or expected outputs, they cannot check for factual accuracy or semantic correctness. Instead, they are best suited for process-oriented and quality metrics such as trajectory, efficiency, and quality / sentiments.
 
-#### How are offline evals better for accuracy?
+### How are offline evals better for accuracy?
 * Offline evaluation is superior for measuring accuracy because it allows you to test against ground truth, which is impossible to consistently determine in real-time production settings.
 * Here is how offline evaluation ensures accuracy:
     * **Curated Test Datasets:** You can build a dataset of specific inputs paired with verified, expected outputs. This creates a controlled benchmark to verify if the agent is producing correct information.
     * **Regressions and Benchmarking:** By running these tests before deploying code, you can catch regressions and systematically "hill climb" to improve the agent’s reasoning capabilities over time.
     * **Controllable Environment:** Unlike online monitoring, which is subject to the randomness of user inputs, offline evaluation provides a consistent environment to repeatedly test logic, tool usage, and reasoning
 
-#### What is an ad hoc evaluation? When to use it?
+### What is an ad hoc evaluation? When to use it?
 * An ad hoc evaluation is an exploratory approach to analysis that allows you to investigate specific hunches or user feedback without needing to pre-configure automated tests
 * Key characteristics of ad hoc evaluations include:
     * **Flexibility:** Unlike online evaluations that run automatically on all production traces, ad hoc evaluations are performed on demand
@@ -151,7 +151,7 @@ You should use ad hoc evaluation when you want to perform exploratory data analy
 It is a highly flexible, exploratory tool, used at any time to gain insights that pre-configured tests might miss.
 
 Reference:
-* [Observability and Evals for AI Agents: A Simple Breakdown - Harrison Chase, LangChain (https://youtu.be/FDVdLrloFOw?si=fGFGYkTqYEh1hQ7t)]
+* [Observability and Evals for AI Agents: A Simple Breakdown - Harrison Chase, LangChain (Feb, 2026)](https://youtu.be/FDVdLrloFOw?si=fGFGYkTqYEh1hQ7t)
 
 
 # Reference reading sources
