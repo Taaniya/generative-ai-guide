@@ -31,9 +31,45 @@ Automate conversation labeling:
 3. Use LLMs for Categorization: Leverage LLMs to automatically label your raw conversation data against your defined taxonomy. By providing the model with your conversation logs and the set of categories, it can classify new interactions without manual intervention.
 4. Aggregated Reporting: Use these automated labels to aggregate your data and count which errors occur most frequently. This turns qualitative logs into quantitative data that drives your product roadmap and engineering priorities
 
-
 Reference - 
 * [Error Analysis: The Highest ROI Technique In AI Engineering - Hamel Husain](https://youtu.be/e2i6JbU2R-s?si=fUaeOioS6IedrEY3)
+
+#### What is the paradigm shift in observability and evals from traditional deterministic software engineering to non-deterministic agentic systems? 
+1. The Shift to Emergent Behavior:
+   * Unlike traditional software where source code is the sole source of truth, agentic systems are non-deterministic.
+   * Behavior is emergent, driven by natural language inputs and dynamic tool-use.
+   * This renders traditional stack traces obsolete for debugging; instead, the execution trace becomes the new source of truth.
+
+2. Debugging agents is harder:
+   * Debugging AI agents is significantly more complex than traditional software due to a fundamental shift in how they function :
+       * **Non-Determinism:** Unlike traditional software, which is deterministic (the same code produces the same result every time), agents use Large Language Models (LLMs) that are inherently non-deterministic. Their behavior is emergent, meaning it unfolds as the agent runs.
+       * **Lack of Traditional Stack Traces:** In traditional programming, code is the source of truth, and you can identify bugs via stack traces. With agents, the logic does not reside in a single line of code, but in the evolving context of the interaction. Since there is no failing code path to inspect, you must rely on execution traces to understand the agent's reasoning process.
+       * **Unconstrained Inputs:** Agents accept natural language as input. Because this input is completely unconstrained, developers cannot predict or write comprehensive tests for every possible user action ahead of time. You often don't know exactly what your agent will do until it is actively used in a production environment.
+
+3. Primitives of Agent Observability:
+To effectively debug agent reasoning, you must implement observability across three granularities:
+   * **Run (Single LLM call):** Focus on capturing input context (system prompts, tool definitions) and raw output (including reasoning blocks and tool calls).
+   * **Trace (Execution flow):** A collection of runs in sequence. Critical for understanding how previous decisions influence subsequent steps.
+   * **Thread (Multi-turn):** A sequence of traces. Necessary for debugging state maintenance and context retention over extended interactions.
+
+4. Redefining Evaluation:
+Agent evaluation shifts from testing code paths to testing reasoning and context.
+    * **Single-step Evals:** Unit tests for decisions; fast, clear pass/fail criteria.
+    * **Trace Evals:** Validate entire tool-use trajectories and state changes.
+    * **Multi-turn Evals:** Most realistic but complex; tests the agent's ability to maintain context over long-horizon tasks.
+
+5. Evaluation Lifecycle:
+    * **Offline:** Essential for benchmarking and catching regressions before production deployment using curated datasets.
+    * **Online:** Runs in production post-execution. Cannot rely on ground truth but is vital for flagging trajectory, efficiency, or quality failures in real-time.
+    * **Ad-hoc:** Exploratory analysis (e.g., clustering failure modes, identifying user frustration) used when specific hypothesis-driven debugging is required.
+
+5. Coupling Observability and Evals:
+    * Observability powers the entire evaluation pipeline. Production traces serve as the data source for test cases.
+    * When an agent fails, developers extract the state from the trace, anonymize if necessary, and promote it to an offline test case to prevent future regressions.
+    * This feedback loop is the foundation of production-grade agent reliability.
+
+
+
 
 # Reference reading sources
 1. [Define success criteria and build evals (Anthropic Documentation)](https://docs.claude.com/en/docs/test-and-evaluate/develop-tests)
