@@ -35,7 +35,7 @@ Hierarchical (Parent-Child) Chunking:
 * **Risk mitigated:**
    * It eliminates the risk of an LLM hallucinating due to a tiny, isolated snippet lacking context.
 
-Recursive Character Text Chunking 
+Recursive Character Text Chunking:
 * (Most Reliable Baseline)If you want something that "just works" out of the box with zero configuration or high computational overhead, Recursive Character Chunking (using a hierarchy of separators like `\n\n`, `\n`,` `, `""`) is the industry baseline.
 * **Why it's reliable:**
    * It respects structural boundaries (paragraphs first, then sentences, then words) without needing expensive machine learning models to calculate semantic shifts.
@@ -44,10 +44,7 @@ Recursive Character Text Chunking
 
    
 Other chunking strategies:
-
  * Fixed size
- * Recursive character-level chunking
- * Recursive
  * Adaptive
  * Context-enriched chunking
  * AI-driven dynamic chunking
