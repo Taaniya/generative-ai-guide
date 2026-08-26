@@ -56,7 +56,7 @@ Other chunking strategies:
    * [Databricks - Ultimate guide to chunking strategies for RAG](https://community.databricks.com/t5/technical-blog/the-ultimate-guide-to-chunking-strategies-for-rag-applications/ba-p/113089)
   * [Pinecone - chunking strategies](https://www.pinecone.io/learn/chunking-strategies/)
   * [Microsoft - Chunking approaches](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-chunking-phase#chunking-approaches)
-  * [Implement RAG chunking strategies with LangChain and watsonx.ai - IM](https://www.ibm.com/think/tutorials/chunking-strategies-for-rag-with-langchain-watsonx-ai)
+  * [Implement RAG chunking strategies with LangChain and watsonx.ai - IBM](https://www.ibm.com/think/tutorials/chunking-strategies-for-rag-with-langchain-watsonx-ai)
   * [Text Chunking strategies -Qdrant](https://qdrant.tech/course/essentials/day-1/chunking-strategies/)
   * [Chunking Strategies to Improve LLM RAG Pipeline Performance - Weaviate, Sept 2025](https://weaviate.io/blog/chunking-strategies-for-rag)
  
