@@ -231,6 +231,7 @@ References:
 * DeepLearning.AI Course - [MCP: Build Rich-Context AI Apps with Anthropic](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/information)
 * Anthropic blog - [Introducing MCP, Nov 2024](https://www.anthropic.com/news/model-context-protocol)
 * Tutorial - [Deep dive into MCP, Gaurav Sen](https://youtu.be/uBL0siiliGo?si=5KGcbqi09vLhhZNa)
+* [Writing effective tools for agents — with agents - Anthropic, Sept 2025](https://www.anthropic.com/engineering/writing-tools-for-agents)
 
 
 
