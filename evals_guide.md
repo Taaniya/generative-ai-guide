@@ -182,14 +182,15 @@ Reference:
 13. [Blog - An LLM-as-a-judge won't save the product - fixing your process will (April, 2025)](https://eugeneyan.com/writing/eval-process/)
 14. [Ground truth generation and review best practices for evaluating Gen-AI question-answering with FMEval - AWS (Mar, 2025)](https://aws.amazon.com/blogs/machine-learning/ground-truth-generation-and-review-best-practices-for-evaluating-generative-ai-question-answering-with-fmeval/)
 15. [Blog - Evals Flash cards, Hamel Husain](https://hamel.dev/notes/llm/evals/flashcards/)
-16. [Blog - Agent failure modes and evaluation, by Chip Huyen (Jan, 2025)](https://huyenchip.com/2025/01/07/agents.html#agent_failure_modes_and_evaluation)
-17. [Huggingface LLM evaluation guidebook](https://huggingface.co/spaces/OpenEvals/evaluation-guidebook)
-18. [Huggingface LLM course - Evaluation](https://huggingface.co/learn/llm-course/en/chapter11/5)
-19. [Golden dataset: Role in Custom LLM evals - Arize](https://arize.com/resource/golden-dataset/)
-20. [Huggingface Using LLM-as-a-judge for an automated and versatile evaluation](https://huggingface.co/learn/cookbook/llm_judge)
-21. [Video - Intro To Error Analysis: Creating Custom Data Annotation Apps, Hamel Husain](https://youtu.be/qH1dZ8JLLdU?si=NglOiQ2u3w26q6B2)
-22. [Blog - Pass@k vs Pass^k: Understanding agent reliability (2025)](https://www.philschmid.de/agents-pass-at-k-pass-power-k)
-23. Langchain tutorials -
+16. [Watch - AI Eng. vs PMs: Who should drive Evals?, Hamel Husain (Jun 2025)](https://youtu.be/FHDoiCtRGY8?si=E5K78iFi0HCuZtH1)
+17. [Blog - Agent failure modes and evaluation, by Chip Huyen (Jan, 2025)](https://huyenchip.com/2025/01/07/agents.html#agent_failure_modes_and_evaluation)
+18. [Huggingface LLM evaluation guidebook](https://huggingface.co/spaces/OpenEvals/evaluation-guidebook)
+19. [Huggingface LLM course - Evaluation](https://huggingface.co/learn/llm-course/en/chapter11/5)
+20. [Golden dataset: Role in Custom LLM evals - Arize](https://arize.com/resource/golden-dataset/)
+21. [Huggingface Using LLM-as-a-judge for an automated and versatile evaluation](https://huggingface.co/learn/cookbook/llm_judge)
+22. [Video - Intro To Error Analysis: Creating Custom Data Annotation Apps, Hamel Husain](https://youtu.be/qH1dZ8JLLdU?si=NglOiQ2u3w26q6B2)
+23. [Blog - Pass@k vs Pass^k: Understanding agent reliability (2025)](https://www.philschmid.de/agents-pass-at-k-pass-power-k)
+24. Langchain tutorials -
     * [Beginner's Guide to Agent Evaluations (Jan,2025)](https://youtu.be/_QozKR9eQE8?si=IRDimZnk5YmfVU4L)
     * [How to Evaluate Document Extraction](https://youtu.be/zguxPRmFzxw?si=BVfMuja6or2kRtyy)
 
