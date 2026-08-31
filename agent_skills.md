@@ -46,5 +46,8 @@ Each skill typically consists of a directory containing:
 * https://agentskills.io/what-are-skills
 * Specification (Complete format specification for skills.md files) - https://agentskills.io/specification
 * https://learn.microsoft.com/en-us/agent-framework/agents/skills?pivots=programming-language-csharp
-* [Langchain docs - Multi agent skills](https://docs.langchain.com/oss/python/langchain/multi-agent/skills)
+* LangChain docs
+     * [Multi agent skills](https://docs.langchain.com/oss/python/langchain/multi-agent/skills)
+     * [Using skills with deep agents](https://www.langchain.com/blog/using-skills-with-deep-agents)
+
   
