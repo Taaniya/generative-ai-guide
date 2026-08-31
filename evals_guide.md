@@ -208,6 +208,8 @@ Reference:
 ## LangFuse
 * [LLM-as-a-judge](https://langfuse.com/docs/evaluation/evaluation-methods/llm-as-a-judge)
 
-
+Agentic development frameworks with evals -
 ## ADK
 * [Evaluating agents with ADK](https://codelabs.developers.google.com/adk-eval/instructions#0)
+* [Evals with ADK](https://adk.dev/evaluate/)
+* [Blog - Agent Factory Recap: A Deep Dive into Agent Evaluation, Practical Tooling, and Multi-Agent Systems (Oct, 2025)](https://cloud.google.com/blog/topics/developers-practitioners/agent-factory-recap-a-deep-dive-into-agent-evaluation-practical-tooling-and-multi-agent-systems)
