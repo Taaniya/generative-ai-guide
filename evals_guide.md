@@ -183,7 +183,7 @@ Reference:
 14. [Ground truth generation and review best practices for evaluating Gen-AI question-answering with FMEval - AWS (Mar, 2025)](https://aws.amazon.com/blogs/machine-learning/ground-truth-generation-and-review-best-practices-for-evaluating-generative-ai-question-answering-with-fmeval/)
 15. [Blog - Evals Flash cards, Hamel Husain](https://hamel.dev/notes/llm/evals/flashcards/)
 16. [Watch - AI Eng. vs PMs: Who should drive Evals?, Hamel Husain (Jun 2025)](https://youtu.be/FHDoiCtRGY8?si=E5K78iFi0HCuZtH1)
-17. [LLM Evals: Common Mistakes, Hamel Husain (May 2025)](https://youtu.be/GL0XhAj5LPE?si=fLVQLvLzoNfqLAVi)
+17. [Watch - LLM Evals: Common Mistakes, Hamel Husain (May 2025)](https://youtu.be/GL0XhAj5LPE?si=fLVQLvLzoNfqLAVi)
 18. [Blog - Agent failure modes and evaluation, by Chip Huyen (Jan, 2025)](https://huyenchip.com/2025/01/07/agents.html#agent_failure_modes_and_evaluation)
 19. [Huggingface LLM evaluation guidebook](https://huggingface.co/spaces/OpenEvals/evaluation-guidebook)
 20. [Huggingface LLM course - Evaluation](https://huggingface.co/learn/llm-course/en/chapter11/5)
