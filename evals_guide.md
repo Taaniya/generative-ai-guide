@@ -188,6 +188,9 @@ Reference:
 19. [Huggingface Using LLM-as-a-judge for an automated and versatile evaluation](https://huggingface.co/learn/cookbook/llm_judge)
 20. [Video - Intro To Error Analysis: Creating Custom Data Annotation Apps, Hamel Husain](https://youtu.be/qH1dZ8JLLdU?si=NglOiQ2u3w26q6B2)
 21. [Blog - Pass@k vs Pass^k: Understanding agent reliability (2025)](https://www.philschmid.de/agents-pass-at-k-pass-power-k)
+22. Langchain tutorials -
+    * [Beginner's Guide to Agent Evaluations (Jan,2025)](https://youtu.be/_QozKR9eQE8?si=IRDimZnk5YmfVU4L)
+    * [How to Evaluate Document Extraction](https://youtu.be/zguxPRmFzxw?si=BVfMuja6or2kRtyy)
 
 # Eval Frameworks 
 ## Phoenix (Arize AI)
