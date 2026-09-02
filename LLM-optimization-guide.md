@@ -13,7 +13,7 @@
 `Memory = 2 * precision * layers * dimension * sequence length  * batch size`
 
 * where, 2 =  K and V matrices
-* precision = bytes per parameter (E.g., 4 for fp32)
+* precision = bytes per parameter (E.g., 2 for fp16 inference)
 * layers = No. of layers in the model
 * dimension = dimension of embeddings
 * sequence length = length we want to generate at the end, including the prompt tokens
