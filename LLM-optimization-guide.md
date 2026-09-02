@@ -7,7 +7,6 @@
 
 * **Memory usage impact -**
     * It trades off memory for latency and computation.
-    * For large models, the cache can take up significantly more memory than the model weights themselves 
     * Because the cache grows with the sequence length and batch size, it often consumes the majority of GPU memory during inference. The memory usage can be calculated as:
 
 `Memory = 2 * precision * layers * dimension * sequence length  * batch size`
@@ -18,6 +17,16 @@
 * dimension = dimension of embeddings
 * sequence length = length we want to generate at the end, including the prompt tokens
 
+* For large models, the cache can take up significantly more memory than the model weights themselves. E.g., For model OPT 30B,
+  * precision = 2 (FP16)
+  * layers = 48
+  * dimensions = 7168
+  * sequence length = 1024 (Suppose we set max sequence length as 1024)
+  * batch size = 128
+  * KV cache memory usage = 180GB
+  * whereas, model memory usage = 2 * 30B = 60GB (assuming FP16 precision)
+  
+  
 Reference -
 * [KV cache: Memory usage in transformers](https://youtu.be/80bIUggRJf4?si=94HRT3CFXODeaIta)
 * [What is a KV cache, and why does it make LLM inference faster? - Sebastian Raschka](https://sebastianraschka.com/faq/docs/kv-cache.html)
