@@ -126,4 +126,5 @@ Documentation & Tutorials -
 * [Git repo - Torchao: PyTorch-Native Training-to-Serving Model Optimization](https://github.com/pytorch/ao)
 
 
-
+Other references and reading sources:
+* [Mastering LLM Techniques: Inference Optimization - Nvidia (Nov 2023)](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/)
