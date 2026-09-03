@@ -2,6 +2,7 @@
 * [What is PagedAttention (for KV Cache)](#what-is-pagedattention-for-kv-cache)
 * [What is continuous batching?](#what-is-continuous-batching)
 * [Quantization - The Core Compression Technique](#quantization---the-core-compression-technique)
+* [Speculative decoding](#speculative-decoding)
 
 ### What is KV cache?
 * It is used to speed up the autoregressive decoding phase of an LLM for text generation by caching internally computed matrices in its attention layers to reuse them later for predicting subsequent tokens.
