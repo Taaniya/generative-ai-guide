@@ -42,6 +42,16 @@ Reference -
 - Most LLMs today are released in **BF16** (Brain Float 16 — 16 bits per number).
 - Quantization converts numbers into lower bit formats: **FP8, INT8, or INT4**.
 
+**Motivation: The gap in current situation and real problems with LLMs -** 
+* Model sizes of LLMs have grown since past few years to reaching hundreds of billions of parameters which GPU memory cannot yet handle completely.
+* This limitation leads to following problems -
+   * **GPU & Infrastructure Cost:**	Bigger models require more hardware accelerators, often spread across multiple nodes — expensive to operate.
+   * **User Experience Tradeoffs:**	More parameters can mean slower responses, lower throughput, and less room for long context in the KV cache.
+   * **Energy & Carbon Footprint:**	Every extra GPU draws power; at scale, this adds up to a real environmental cost.
+   * **Risk of Model Obsolescence:**	Risk of investing in infrastructure for a model that gets superseded quickly.
+
+
+
 **Numeric Formats Explained**
 
 | Format | Full Name | Notes |
