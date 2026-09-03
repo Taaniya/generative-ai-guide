@@ -3,6 +3,7 @@
 * [What is continuous batching?](#what-is-continuous-batching)
 * [Quantization - The Core Compression Technique](#quantization---the-core-compression-technique)
 * [Speculative decoding](#speculative-decoding)
+* [What are the different hardware and infrastructure optimizations for LLM inference?](#what-are-the-different-hardware-and-infrastructure-optimizations-for-llm-inference)
 
 ### What is KV cache?
 * It is used to speed up the autoregressive decoding phase of an LLM for text generation by caching internally computed matrices in its attention layers to reuse them later for predicting subsequent tokens.
@@ -154,6 +155,13 @@ References -
 * https://developer.nvidia.com/blog/an-introduction-to-speculative-decoding-for-reducing-latency-in-ai-inference/
 * [Watch - Speculative decoding: When 2 LLMs are faster than 1](https://youtu.be/S-8yr_RibJ4?si=-TpUdM6S_qdYBvk4)
 * https://aryagm.com/blog/speculative-decoding-the-art-of-being-good-enough/
+
+### What are the different hardware and infrastructure optimizations for LLM inference?
+
+* **Tensor Parallelism (TP):** Splits individual matrix multiplications across multiple GPUs (e.g., Megatron-LM). Essential for models too large to fit on a single GPU's VRAM.
+* **Pipeline Parallelism (PP):** Splits different layers of the model sequentially across multiple GPUs.
+* **Managed API Routers:** Using LLM gateways to route simpler queries to smaller, cheaper models (like GPT-4o-mini or Llama-3-8B) and reserving complex queries for flagship models.
+
 
 Other references and reading sources:
 * [Mastering LLM Techniques: Inference Optimization - Nvidia (Nov 2023)](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/)
