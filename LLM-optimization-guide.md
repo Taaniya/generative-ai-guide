@@ -1,3 +1,7 @@
+* [What is KV cache? How does it help in optimizing latency during LLM inference?](#what-is-kv-cache-how-does-it-help-in-optimizing-latency-during-llm-inference)
+* [What is PagedAttention (for KV Cache)](#what-is-pagedattention-for-kv-cache)
+* [Quantization - The Core Compression Technique](#quantization---the-core-compression-technique)
+
 ### What is KV cache? How does it help in optimizing latency during LLM inference?
 * It is used to speed up the autoregressive decoding phase of an LLM for text generation by caching internally computed matrices in its attention layers to reuse them later for predicting subsequent tokens.
 * When the model receives an input prompt, during prefill phase, each of its attention layers compute their Key and value matrices internally, and cache them in GPU's high-speed memory.
@@ -30,6 +34,15 @@
 Reference -
 * [KV cache: Memory usage in transformers](https://youtu.be/80bIUggRJf4?si=94HRT3CFXODeaIta)
 * [What is a KV cache, and why does it make LLM inference faster? - Sebastian Raschka](https://sebastianraschka.com/faq/docs/kv-cache.html)
+
+
+### What is PagedAttention (for KV Cache)
+* **Problem with old approach:** Previous methods reserved one large, contiguous memory block per request, sized for the maximum possible context length — resulting in 60–80% wasted memory, since most requests don't use their full context.
+* PagedAttention's solution: Splits the KV cache into small, fixed-size blocks that can be placed non-contiguously anywhere in GPU memory (similar to virtual memory paging in OS design).
+**Result:** Significantly more concurrent requests can be served on the same GPU hardware.
+
+* Find more details on how it works [here](https://github.com/Taaniya/deeplearning-ai-course-fast-and-efficient-llm-inference-with-vllms/blob/main/L5_Serving_LLMs_Efficiently_with_vLLM_Part_1.md#5-pagedattention)
+
 
 
 
