@@ -1,8 +1,8 @@
-* [What is KV cache? How does it help in optimizing latency during LLM inference?](#what-is-kv-cache-how-does-it-help-in-optimizing-latency-during-llm-inference)
+* [What is KV cache?](#what-is-kv-cache)
 * [What is PagedAttention (for KV Cache)](#what-is-pagedattention-for-kv-cache)
 * [Quantization - The Core Compression Technique](#quantization---the-core-compression-technique)
 
-### What is KV cache? How does it help in optimizing latency during LLM inference?
+### What is KV cache?
 * It is used to speed up the autoregressive decoding phase of an LLM for text generation by caching internally computed matrices in its attention layers to reuse them later for predicting subsequent tokens.
 * When the model receives an input prompt, during prefill phase, each of its attention layers compute their Key and value matrices internally, and cache them in GPU's high-speed memory.
 * During autoregression, when a new token is generated and fed back as part of the input sequence to the model, the Key and Value matrics of previous prompt tokens are reused from KV cache instead of being recomputed again, and only the key and value vectors only for the new token are computed and appended to the existing cache for generating subsequent ones and so on.
