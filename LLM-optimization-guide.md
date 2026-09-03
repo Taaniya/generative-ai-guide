@@ -1,5 +1,6 @@
 * [What is KV cache?](#what-is-kv-cache)
 * [What is PagedAttention (for KV Cache)](#what-is-pagedattention-for-kv-cache)
+* [What is continuous batching?](#what-is-continuous-batching)
 * [Quantization - The Core Compression Technique](#quantization---the-core-compression-technique)
 
 ### What is KV cache?
@@ -44,6 +45,14 @@ Reference -
 * Find more details on how it works [here](https://github.com/Taaniya/deeplearning-ai-course-fast-and-efficient-llm-inference-with-vllms/blob/main/L5_Serving_LLMs_Efficiently_with_vLLM_Part_1.md#5-pagedattention)
 
 
+### What is continuous batching?
+* Dynamically batching incoming requests as they arrive/finish across different users, rather than static batching
+* Replaces idle GPU time with active computing, maximizing hardware efficiency.
+* With batching, the GPU reads the model's weights once and use them for many users simultaneously.
+* Unlike static batching, where the entire batch has to wait for the longest request to finish, with dynamic batching, once a request finishes, a new request immediately takes the slot in the batch.
+
+* Find more details on how it works [here](https://github.com/Taaniya/deeplearning-ai-course-fast-and-efficient-llm-inference-with-vllms/blob/main/L5_Serving_LLMs_Efficiently_with_vLLM_Part_1.md#3-continuous-batching)
+* [Continuous batching - HuggingFace (Nov, 2025)](https://huggingface.co/blog/continuous_batching)
 
 
 ### Quantization - The Core Compression Technique
