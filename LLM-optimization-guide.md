@@ -134,6 +134,25 @@ Documentation & Tutorials -
 * [Quantization - Pytorch](https://docs.pytorch.org/docs/stable/quantization.html)
 * [Git repo - Torchao: PyTorch-Native Training-to-Serving Model Optimization](https://github.com/pytorch/ao)
 
+### Speculative decoding
+In speculative decoding, the logits for the small (draft) and large (target) models come from **separate forward passes** of each respective model over the current context sequence.
+
+**Small (Draft) Model Logits:** 
+* Generated sequentially (or via a parallel drafting head/sub-network) step-by-step as the small model proposes K candidate tokens.
+* At each draft step t, the small model runs a fast forward pass on the existing prefix, outputs raw pre-softmax scores (logits) for that position, samples a token $x_{t}$, and feeds it back in to predict the next guess.
+* The corresponding draft probabilities $p_{draft}$ are calculated from these saved logits.
+
+**Target Model Logits:**
+   * Generated in a single, parallel forward pass after the draft phase.
+   * The entire sequence (the original context plus all K speculated draft tokens) is fed into the large target model all at once.
+   * Utilizing causal masking, the target model evaluates all positions simultaneously and outputs a full set of logits corresponding to every token position in the speculated block in one go.
+
+The rejection sampling step then converts both sets of logits into probability distributions $p_{target}$ and $p_{draft}$ via softmax (and temperature scaling if used) to compare them position-by-position.
+
+References -
+* https://developer.nvidia.com/blog/an-introduction-to-speculative-decoding-for-reducing-latency-in-ai-inference/
+* [Watch - Speculative decoding: When 2 LLMs are faster than 1](https://youtu.be/S-8yr_RibJ4?si=-TpUdM6S_qdYBvk4)
+* https://aryagm.com/blog/speculative-decoding-the-art-of-being-good-enough/
 
 Other references and reading sources:
 * [Mastering LLM Techniques: Inference Optimization - Nvidia (Nov 2023)](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/)
