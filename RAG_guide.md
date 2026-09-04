@@ -154,3 +154,18 @@ Semantic vs. Logical Routing: Quick Comparison
 |Primary Goal | Cast a wide net to fetch a large candidate pool (e.g., top 20–50 chunks). | Filter noise and precisely order the absolute best snippets (e.g., top 3–5 chunks).|
 | How It Works | Uses fast vector embedding distance or keyword matching (bi-encoders).| Uses deep cross-encoders to process the query and document text together at runtime.| 
 | Speed & Cost | Extremely fast and computationally cheap to run at scale | Slower and more compute-heavy, applied only to a small subset of candidates.|
+
+
+### Difference between cross encoders and from embedding models
+* The core difference is how and when they look at the text:
+  * Embedding models evaluate the query and the documents completely separately
+  * While Cross-encoders evaluate the query and the document simultaneously, allowing them to compare individual words directly.
+
+Here is a direct comparison of how they operate:
+| Feature | Embedding Models (Bi-Encoders) | Cross-Encoders | 
+|----|------|--------|
+|Input Structure | Feeds the query and document into the model independently. | Feeds the query and document into the model together as a single combined text string.|
+| Output Type | A vector (list of numbers) representing the overall meaning. | A single similarity score (e.g., 0 to 1). | 
+| Attention Mechanism | Words in the query cannot pay attention to words in the document |Deep interaction where every word in the query directly cross-references every word in the document.| 
+| Speed & Scalability | Extremely fast for searching millions of items because document vectors can be calculated in advance. | Slow and computationally expensive, as it must process every query-document pair together at runtime. |
+| Primary Use Case | Initial first-pass retrieval (finding the top 50 or 100 candidate documents) | Second-pass re-ranking (scoring and sorting the top 10 documents for maximum accuracy)|
