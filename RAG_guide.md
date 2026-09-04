@@ -79,3 +79,21 @@ Other chunking strategies:
 
 Reference -
 1. [Tutorial - RAG from scratch, Langchain](https://youtube.com/playlist?list=PLfaIDFEXuae2LXbO1_PKyVJiQ23ZztA0x&si=GD_iDRvZkp-tnJwX)
+
+
+### What is Query routing?
+* Query routing in Retrieval-Augmented Generation (RAG) is performed after query translation. This is an advanced decision-making step that directs a user's input to the most appropriate data source, tool, or processing strategy before searching.
+* Instead of sending every question through a single, naive retrieval pipeline, a router acts like an intelligent traffic cop. It analyzes user intent and forwards the request to the right destination—such as a vector database for unstructured text, a relational database (Text-to-SQL) for structured data, a knowledge graph, or even skipping retrieval entirely for general knowledge. 
+
+#### Core Types of Routing
+* **Logical Routing:** Uses a language model equipped with descriptions of available data sources or tools. The LLM reasons about the query and outputs a structured choice (like a function call or classification tag) to pick the best path.
+* **Semantic Routing:** Embeds the incoming user query and measures its vector similarity against preset prompt descriptions or category anchors. The route with the highest similarity score wins. This method is fast and avoids LLM reasoning overhead.
+
+#### Why Routing Matters
+* **Reduces Latency and Cost:** Simple queries or chit-chat can bypass heavy vector searches or web lookups, saving tokens and speeding up response times.
+* **Improves Accuracy:** Complex queries that need precise numbers can go straight to SQL or graph databases, while conceptual questions go to vector search.
+* **Prevents Bad Retrieval:** Sending an irrelevant query to a specialized retriever injects noisy context that can degrade the final answer quality.
+
+
+Further readings:
+  * [Research paper RAGRouter: Learning to Route Queries to Multiple Retrieval-Augmented Language Models, Zhang et al., NeurIPS 2025](https://openreview.net/pdf?id=4VKVUmE1I8)
