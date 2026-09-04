@@ -2,6 +2,8 @@
 * [RAG solution design and evaluation guide - Microsoft](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-solution-design-and-evaluation-guide)
 
 ## Chunking strategies
+* RAG chunking is the process of breaking large documents into smaller text segments so an AI model can efficiently index, search, and retrieve relevant information.
+* Proper chunking prevents models from hitting token limits, reduces noise, and ensures high-precision retrieval
 
 ### Semantic chunking:
 * Semantic chunking divides text based on changes in meaning rather than fixed character or token counts.
