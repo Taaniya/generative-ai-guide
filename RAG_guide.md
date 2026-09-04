@@ -62,7 +62,8 @@ When implementing this in frameworks like LangChain, you control two main parame
    * Preserves Context: Keeps paragraphs and sentences intact whenever possible, making the text easier for an LLM to understand
    * Highly Flexible: Adapts well to generic text, articles, and essays without needing complex pre-processing.
    * Prevents Micro-Splitting: By stopping as soon as the target size is met, it avoids breaking text down into individual words or characters unnecessarily.
-* **Cons:**
+
+**Cons:**
   * Not True Semantic Chunking: It relies on formatting clues (like newlines) rather than analyzing the actual meaning or topic changes in the text.
   * Configuration Dependent: Choosing the wrong chunk size or overlap can still cause tables or code blocks to split awkwardly. 
 
