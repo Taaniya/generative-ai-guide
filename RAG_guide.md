@@ -76,3 +76,6 @@ Other chunking strategies:
     * It works by having an LLM generate a hypothetical document that would answer the user's question, and then using embeddings of the generated document to perform the retrieval against the index.
     * Because the hypothetical document is generated in the same style and format as the real documents in your index, it sits much closer to them in the high-dimensional embedding space.
     * This helps the retriever find more accurate and relevant results than it could with the raw question alone.
+
+Reference -
+1. [Tutorial - RAG from scratch, Langchain](https://youtube.com/playlist?list=PLfaIDFEXuae2LXbO1_PKyVJiQ23ZztA0x&si=GD_iDRvZkp-tnJwX)
