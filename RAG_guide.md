@@ -133,4 +133,14 @@ Semantic vs. Logical Routing: Quick Comparison
 | Complexity | Best for clear, distinct intent categories | Best for nuanced logic or dynamic variables|
 
 
+### What is Reciprocal Rank Fusion?
+* Reciprocal Rank Fusion (RRF) merges multiple ranked search lists into one unified list by calculating a new score for each document based only on its position in each list, without comparing raw score numbers. It is widely used in hybrid search systems to combine keyword searches and vector searches.
 
+#### How the RRF Formula Works
+* Instead of dealing with different score scales from different search tools, RRF looks strictly at where a document placed (its rank).
+* The Score Equation: For each document, the system calculates a score using the formula:
+
+  $Score = \sum \frac{1}{k+\text{rank}}$
+  
+* The Constant (k): The letter k is a small smoothing constant, usually set to 60. This stops top-ranked items from completely overpowering the final score.
+* The Summation: If a document appears in more than one list, its scores from each list are added together. 
