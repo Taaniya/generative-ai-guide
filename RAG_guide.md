@@ -97,3 +97,40 @@ Reference -
 
 Further readings:
   * [Research paper RAGRouter: Learning to Route Queries to Multiple Retrieval-Augmented Language Models, Zhang et al., NeurIPS 2025](https://openreview.net/pdf?id=4VKVUmE1I8)
+
+
+### How does semantic routing work?
+* Semantic routing works by turning the routing choice into a vector similarity problem instead of a natural language reasoning problem.
+* Instead of asking an LLM to read descriptions and pick a path, semantic routing matches the mathematical "meaning" (embedding) of a user's query against pre-defined route templates.
+
+**1. Defining the Routes:** 
+* You start by defining your destinations (routes) and providing a handful of example phrases for each.
+* These examples act as anchors for what that route represents.
+    * Route A (Technical Support): "How do I reset my password?", "My account is locked", "Where do I update my API key?"
+    * Route B (Chit-Chat): "Hello", "How are you doing?", "Good morning bot."
+    * Route C (Product Recommendations): "What is your best running shoe?", "Recommend a laptop for gaming", "Which plan should I buy?"
+ 
+**2. Creating Vector Anchors:**
+* Before handling any live traffic, your system passes all of these example phrases through an embedding model (like OpenAI's text-embedding-3-small or Hugging Face models). This converts the phrases into a set of coordinates (vectors) that capture their semantic meaning, which are stored locally in memory.
+
+**3. Processing the Incoming Query:**
+* When a user submits a live query (e.g., "I forgot my login info"), the system immediately generates an embedding for **only that query** using the exact same embedding model.
+
+**4. Mathematical Matching:**
+* The system runs a fast mathematical comparison—typically using Cosine Similarity—between the new query vector and all your pre-calculated example vectors.
+
+**5. Executing the Selected Route:**
+* The route associated with the closest matching example vector is selected.
+* For "I forgot my login info", the system will find high similarity with Route A's examples.
+* The query is then instantly forwarded to the specialized technical support RAG pipeline or vector database index.
+
+Semantic vs. Logical Routing: Quick Comparison
+|Feature | Semantic Routing | Logical (LLM) Routing|
+|----|-----|----|
+| Mechanism | Vector similarity scoring | LLM text reasoning / Function calling | 
+| Speed | Extremely Fast (milliseconds) | Slower (waiting for LLM generation) | 
+| Cost | Very Cheap (only requires one embedding) | Higher (requires input/output tokens) | 
+| Complexity | Best for clear, distinct intent categories | Best for nuanced logic or dynamic variables|
+
+
+
