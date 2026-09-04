@@ -1,8 +1,9 @@
-## RAG
+# RAG
 * [RAG solution design and evaluation guide - Microsoft](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-solution-design-and-evaluation-guide)
 
-### Chunking strategies
-Semantic chunking:
+## Chunking strategies
+
+### Semantic chunking:
 * Semantic chunking divides text based on changes in meaning rather than fixed character or token counts.
 * It is the most reliable choice for continuous prose, essays, and conversational transcripts.
 * **How it works:** It measures the embedding distance or cosine similarity between consecutive sentences or small windows of text. When the similarity score drops below a specific threshold (indicating a shift in topic), a new chunk boundary is created.
@@ -19,7 +20,7 @@ Semantic chunking:
 * **Risk mitigated:**
    * It eliminates the risk of fixed-size boundaries cutting off a crucial sentence or formula mid-way.
 
-Hierarchical (Parent-Child) Chunking:
+### Hierarchical (Parent-Child) Chunking:
 * Hierarchical chunking creates multiple nested layers of text chunks at different levels of granularity or resolution.
 * It is the most robust option for technical manuals, legal documents, and financial reports.
 * **How it works:** A large parent chunk (e.g., an entire section or 1024 tokens) is subdivided into smaller child chunks (e.g., 128–256 tokens). The vector database indexes and searches the smaller child chunks for maximum precision, but returns or feeds the larger parent context to the LLM during generation.
@@ -35,15 +36,29 @@ Hierarchical (Parent-Child) Chunking:
 * **Risk mitigated:**
    * It eliminates the risk of an LLM hallucinating due to a tiny, isolated snippet lacking context.
 
-Recursive Character Text Chunking:
-* (Most Reliable Baseline)If you want something that "just works" out of the box with zero configuration or high computational overhead, Recursive Character Chunking (using a hierarchy of separators like `\n\n`, `\n`,` `, `""`) is the industry baseline.
-* **Why it's reliable:**
-   * It respects structural boundaries (paragraphs first, then sentences, then words) without needing expensive machine learning models to calculate semantic shifts.
-* **Risk mitigated:**
-   * It acts as a highly predictable, low-cost safety net for mixed-format data.
+### Recursive Character Text Chunking:
+* This is a text-splitting technique that hierarchically breaks down large documents into smaller pieces using a prioritized list of separators. It is widely considered the default go-to chunking method in Retrieval-Augmented Generation (RAG) frameworks because it preserves semantic context by keeping related text (like paragraphs and sentences) together.
+* Instead of blindly cutting text at a strict character count, it attempts to split text using the most logical structural boundaries first.
 
-   
-Other chunking strategies:
+#### How the Algorithm Works
+* The algorithm uses a default sequence of separators, ordered from largest structural unit to smallest:
+  * `"\n\n"` (Paragraphs)
+  * `"\n"` (Newlines/Sentences)
+  * `" "` (Words)
+  * `""` (Individual characters)
+
+#### The Step-by-Step Process
+* Step 1: Check the Size. The algorithm looks at a piece of text. If it is already smaller than your target chunk size, it leaves it alone.
+* Step 2: Try the First Separator. If the text is too big, it looks for the first separator ("\n\n"). It splits the document everywhere a double newline occurs.
+* Step 3: Evaluate the Pieces. If the resulting paragraphs are still larger than the target chunk size, it moves to the next separator ("\n") to split those specific paragraphs into individual sentences.
+* Step 4: Recurse Until Satisfied. It repeats this process down the chain (moving to spaces, then characters) until every single chunk falls below the maximum token or character limit. 
+
+#### Key Parameters
+When implementing this in frameworks like LangChain, you control two main parameters:
+* Chunk Size: The maximum number of characters (or tokens) that a single chunk can contain.
+* Chunk Overlap: The number of characters shared between consecutive chunks. This creates a "sliding window" effect, ensuring that context falling right on a boundary isn't lost.
+
+### Other chunking strategies:
  * Fixed size
  * Adaptive
  * Context-enriched chunking
