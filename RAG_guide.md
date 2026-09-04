@@ -143,4 +143,14 @@ Semantic vs. Logical Routing: Quick Comparison
   $Score = \sum \frac{1}{k+\text{rank}}$
   
 * The Constant (k): The letter k is a small smoothing constant, usually set to 60. This stops top-ranked items from completely overpowering the final score.
-* The Summation: If a document appears in more than one list, its scores from each list are added together. 
+* The Summation: If a document appears in more than one list, its scores from each list are added together.
+
+### What is Reranking?
+* Reranking in RAG is a second-pass refinement step that re-scores and re-orders a broad set of initially retrieved documents based on their true contextual relevance to a query
+
+#### Difference Between Retrieval and Reranking
+| Feature | Initial Retrieval | Reranking | 
+|------|--------|---------|
+|Primary Goal | Cast a wide net to fetch a large candidate pool (e.g., top 20–50 chunks). | Filter noise and precisely order the absolute best snippets (e.g., top 3–5 chunks).|
+| How It Works | Uses fast vector embedding distance or keyword matching (bi-encoders).| Uses deep cross-encoders to process the query and document text together at runtime.| 
+| Speed & Cost | Extremely fast and computationally cheap to run at scale | Slower and more compute-heavy, applied only to a small subset of candidates.|
