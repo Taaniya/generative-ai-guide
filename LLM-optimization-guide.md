@@ -1,3 +1,6 @@
+* [How does LLM inference work?](#how-does-llm-inference-work)
+* [What are the techniques to optimize inference in production?](#what-are-the-techniques-to-optimize-inference-in-production)
+  * [Direct Comparison of Optimization Impact](#direct-comparison-of-optimization-impact)
 * [What is KV cache?](#what-is-kv-cache)
 * [What is PagedAttention (for KV Cache)](#what-is-pagedattention-for-kv-cache)
 * [What is continuous batching?](#what-is-continuous-batching)
@@ -67,7 +70,7 @@
       * Another approach to shrinking the size of a model is to transfer its knowledge to a smaller model through a process called distillation. This process involves training a smaller model (called a student) to mimic the behavior of a larger model (a teacher).
 
 
-**Direct Comparison of Optimization Impact**
+#### Direct Comparison of Optimization Impact
 
 |Technique	| Primary Benefit	| Latency Reduction	| Cost Reduction	| Complexity |
 |----|----|----|----|----|
