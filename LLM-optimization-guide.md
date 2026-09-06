@@ -25,24 +25,20 @@
 2. Continuous Batching (Dynamic Batching):
    * Groups incoming requests from different users together on the fly.
    * Replaces idle GPU time with active computing, maximizing hardware efficiency.
-
-3. FlashAttention:
-   * An algorithm that optimizes the attention mechanism at the hardware level.
-   * It reduces the number of memory reads/writes between the GPU's slow HBM and fast SRAM, speeding up the prefill phase and handling long contexts gracefully.
-
-4. Prompt Caching:
+   
+3. Prompt Caching:
    * Saves the KV cache of frequently used text (like long system instructions or codebases).
    * Stops the GPU from re-reading the same text for every new user request.
 
-5. Speculative Decoding:
+4. Speculative Decoding:
    * Pairs a small, fast "draft" model with a large, slow "target" model.
    * The small model guesses the next few words quickly, and the big model checks them all in one single step.
 
-6. KV Cache Quantization:
+5. KV Cache Quantization:
    * Downsamples the stored Key-Value vectors from FP16 to INT8 or INT4.
    * This allows long-context applications to fit into GPU memory without triggering Out-Of-Memory (OOM) errors.
 
-7. Optimizing the attention mechanism:
+6. Optimizing the attention mechanism:
    * Multi-query attention (2019):
       * Multi-query attention (MQA) uses many query heads and a single key-value head; i.e., key and value vectors are shared among the multiple attention heads, while the query vector is still projected multiple times as before, as in Multi-head attention (MHA).
       * While the amount of computation done in MQA is identical to MHA, the amount of data (keys, values) read from memory is a fraction of before.
@@ -53,15 +49,31 @@
       * GQA strikes a balance between MHA and MQA by projecting key and values to a few groups of query heads. Within each of the groups, it behaves like multi-query attention.
       * This is a balance between memory requirements and model quality
       * E.g., Llama 2 70B uses GQA
-   * Flash attention (2013): FlashAttention is an IO-aware exact attention algorithm that splits inputs into blocks fitting into fast GPU on-chip SRAM to mitigate memory bandwidth bottlenecks
-     
+   * Flash attention (2013):
+     * An algorithm that optimizes the attention mechanism at the hardware level.
+     * It reduces the number of memory reads/writes between the GPU's slow HBM and fast SRAM, speeding up the prefill phase and handling long contexts gracefully.
+     * It is an IO-aware exact attention algorithm that splits inputs into blocks fitting into fast GPU on-chip SRAM to mitigate memory bandwidth bottlenecks
+7. Model optimization:
+   * Quantization:
+     * Quantization is the process of reducing the precision of a model’s weights and activations.
+     * Most models are trained with 32 or 16 bits of precision, where each parameter and activation element takes up 32 or 16 bits of memory—a single-precision floating point. However, most deep learning models can be effectively represented with eight or even fewer bits per value.  
+     * Reduces memory usage drastically and speeds up math calculations with little loss in accuracy.
+   * Pruning and Sparsity:
+     * Removes redundant or less important weights from the network, reducing the overall parameter count that needs to be calculated.
+     * It’s been shown that many deep learning models are robust to pruning, or replacing certain values that are close to 0 with 0 itself.
+     * Sparse matrices are matrices where many of the elements are 0. These can be expressed in a condensed form that takes up less space than a full, dense matrix.
 
-References -
+   * Knowledge distillation:
+      * Another approach to shrinking the size of a model is to transfer its knowledge to a smaller model through a process called distillation. This process involves training a smaller model (called a student) to mimic the behavior of a larger model (a teacher).
+
+References and further readings -
 * [Mastering LLM Techniques: Inference Optimization, Nvidia (Nov, 2023)](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/)
 * [(Multi-Query Attention) Fast Transformer Decoding: One Write-Head is All You Need, 2019](https://arxiv.org/pdf/1911.02150)
 * [Grouped Query Attention: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints](https://arxiv.org/pdf/2305.13245v2)
 * [Optimizing Inference for Long Context and Large Batch Sizes with NVFP4 KV Cache](https://developer.nvidia.com/blog/optimizing-inference-for-long-context-and-large-batch-sizes-with-nvfp4-kv-cache/)
 * [A Visual Guide to Attention Variants in Modern LLMs](https://magazine.sebastianraschka.com/p/visual-attention-variants)
+* [Distilling knowledge in neural network - 2015 (Research paper summary)](https://github.com/Taaniya/research-paper-summaries/blob/main/architecture_advancements/architecture_advancements_papers.md#distilling-knowledge-in-neural-network--2015)
+
 
 ### What is KV cache?
 * It is used to speed up the autoregressive decoding phase of an LLM for text generation by caching internally computed matrices in its attention layers to reuse them later for predicting subsequent tokens.
