@@ -66,6 +66,18 @@
    * Knowledge distillation:
       * Another approach to shrinking the size of a model is to transfer its knowledge to a smaller model through a process called distillation. This process involves training a smaller model (called a student) to mimic the behavior of a larger model (a teacher).
 
+
+**Direct Comparison of Optimization Impact**
+
+|Technique	| Primary Benefit	| Latency Reduction	| Cost Reduction	| Complexity |
+|----|----|----|----|----|
+| PagedAttention	| Maximizes Throughput	| Medium	| High (Higher density)	| Low (Handled by framework) |
+| Quantization (INT4/8)	| Shrinks Memory Footprint	| High	| High (Requires less hardware)	| Medium |
+| Speculative Decoding	| Slashes Time-to-First-Token	| High	| Low (Slight compute overhead)	| High |
+| FlashAttention	| Accelerates Prefill Phase	| High (Long contexts)	| Low	| Low (Native in modern LLMs) |
+
+
+
 References and further readings -
 * [Mastering LLM Techniques: Inference Optimization, Nvidia (Nov, 2023)](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/)
 * [(Multi-Query Attention) Fast Transformer Decoding: One Write-Head is All You Need, 2019](https://arxiv.org/pdf/1911.02150)
