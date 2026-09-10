@@ -10,6 +10,7 @@
 9. [Stateful vs stateless AI agents](#stateless-vs-stateful-ai-agents)
 10. [What is MCP?](#what-is-mcp)
 
+
 #### AI agents
 An agent is an autonomous software system that can perceive its environment, makes independent decisions through reasoning, takes actions using tools / APIs in multiple steps in loop to achieve a goal.
 
@@ -233,5 +234,36 @@ References:
 * Tutorial - [Deep dive into MCP, Gaurav Sen](https://youtu.be/uBL0siiliGo?si=5KGcbqi09vLhhZNa)
 * [Writing effective tools for agents — with agents - Anthropic, Sept 2025](https://www.anthropic.com/engineering/writing-tools-for-agents)
 
+### When to use Managed API vs Open Source LLMs?
+* The decision between using a Managed LLM API (like OpenAI's GPT-4o, Anthropic's Claude, or Google Gemini) and hosting an Open-Source LLM (like Meta's Llama, Mistral, or Alibaba's Qwen) boils down to a trade-off between speed, control, data privacy, and scale.
+* As a general rule of thumb, most teams should start with a managed LLM API to build prototypes and prove market fit quickly, then migrate to open-source models only when specific cost, privacy, or architectural scale thresholds are met.
+
+**Direct Comparison Overview**
+| Criteria | Managed LLM APIs | Open-Source LLMs (Self-Hosted)| 
+|---|---|---|
+|Time to Market | Instant (plug-and-play via simple API calls) | Slow (requires weeks of setting up GPU infrastructure)
+| Operational Overhead | Zero (provider handles scaling, uptime, MLOps) | High (requires dedicated engineering for scaling and hardware) |
+| Pricing Model | Pay-per-token (variable operational expense)| Hardware-bound (predictable flat infrastructure/GPU costs)|
+| Data Privacy | Subject to vendor privacy policies and third-party transit | Complete control (data never leaves your VPC/servers)| 
+| Customization | Limited to basic prompt engineering and light fine-tuning | Full access to modify model weights, tokenizers, and architectures|
 
 
+#### When to Use a Managed LLM API?
+You should choose a managed provider if your priority is agility and utilizing the most advanced frontier models available.
+* Prototyping and MVPs: When you need a proof-of-concept running immediately without investing weeks in infrastructure setup.
+* Highest-Tier Reasoning & Multimodal Needs: If your application requires cutting-edge mathematical reasoning, complex coding tasks, or highly mature, production-ready multimodal features (text + image + audio).
+* Low to Moderate Traffic: For products with under 10,000 daily requests, paying fractionally per token via an API is vastly cheaper than renting a persistent 24/7 GPU instance.
+* Limited MLOps Expertise: When your engineering team consists primarily of software developers rather than specialized machine learning or infrastructure DevOps engineers.
+
+### When to Use Open-Source LLMs?
+You should opt for open-source, self-hosted models when operational autonomy, strict security, or extreme scale dictate your architecture. 
+* Strict Data Privacy & Compliance: Essential for highly regulated industries (healthcare, finance, government) where user data absolutely cannot be transmitted over the internet to a third-party vendor.
+* Massive, Predictable Scale: Once your daily token volume becomes massive, pay-per-token costs skyrocket. Hosting your own model on dedicated hardware (using frameworks like vLLM or SGLang) unlocks significant economies of scale.
+* Deep Domain Customization: When you need to deeply fine-tune a model on highly specialized internal codebases or niche industry jargon, requiring direct access to the model weights. 
+* Zero Rate-Limit Tolerance: If your system cannot afford to fail due to a third-party vendor's server load, network latency spikes, or sudden API rate limits.
+  
+
+**The Modern Alternative: The Hybrid Approach**
+* Many enterprises now implement smart model routing.
+* A lightweight router filters incoming queries: rudimentary or highly sensitive tasks are directed locally to a fast, cheap open-source model (like an 8B or 70B variant), while highly complex reasoning requests are escalated to a premium managed API.
+* This optimizes both cost and performance without locking the architecture into a single path. 
