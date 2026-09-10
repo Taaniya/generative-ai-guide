@@ -1,6 +1,16 @@
 # RAG
 * [RAG solution design and evaluation guide - Microsoft](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-solution-design-and-evaluation-guide)
 
+# Contents
+* [Chunking strategies](#chunking-strategies)
+* [How to choose the right chunking strategy?](#how-to-choose-the-right-chunking-strategy)
+* [What is Query translation in RAG?](#what-is-query-translation-in-rag)
+* [What is Query routing?](#what-is-query-routing)
+* [How does semantic routing work?](#how-does-semantic-routing-work)
+* [What is Reciprocal Rank Fusion?](#what-is-reciprocal-rank-fusion)
+* [What is Reranking?](#what-is-reranking)
+* [Difference between cross encoders and embedding models](#difference-between-cross-encoders-and-embedding-models)
+
 ## Chunking strategies
 * RAG chunking is the process of breaking large documents into smaller text segments so an AI model can efficiently index, search, and retrieve relevant information.
 * Proper chunking prevents models from hitting token limits, reduces noise, and ensures high-precision retrieval
@@ -187,7 +197,7 @@ Semantic vs. Logical Routing: Quick Comparison
 | Speed & Cost | Extremely fast and computationally cheap to run at scale | Slower and more compute-heavy, applied only to a small subset of candidates.|
 
 
-### Difference between cross encoders and from embedding models
+### Difference between cross encoders and embedding models
 * The core difference is how and when they look at the text:
   * Embedding models evaluate the query and the documents completely separately
   * While Cross-encoders evaluate the query and the document simultaneously, allowing them to compare individual words directly.
