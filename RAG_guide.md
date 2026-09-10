@@ -86,7 +86,11 @@ When implementing this in frameworks like LangChain, you control two main parame
   * [Implement RAG chunking strategies with LangChain and watsonx.ai - IBM](https://www.ibm.com/think/tutorials/chunking-strategies-for-rag-with-langchain-watsonx-ai)
   * [Text Chunking strategies -Qdrant](https://qdrant.tech/course/essentials/day-1/chunking-strategies/)
   * [Chunking Strategies to Improve LLM RAG Pipeline Performance - Weaviate, Sept 2025](https://weaviate.io/blog/chunking-strategies-for-rag)
- 
+
+### How to choose the right chunking strategy?
+
+Reference - https://weaviate.io/blog/chunking-strategies-for-rag#how-to-choose-the-best-chunking-strategy
+
 ### What is Query translation in RAG?
 *  Query translation rewrites or expands user questions using a language model before searching a database to improve retrieval accuracy
 
