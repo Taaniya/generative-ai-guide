@@ -10,7 +10,7 @@
 9. [Stateful vs stateless AI agents](#stateless-vs-stateful-ai-agents)
 10. [What is MCP?](#what-is-mcp)
 11. [When to use Managed API vs Open Source LLMs?](#when-to-use-managed-api-vs-open-source-llms)
-
+    * [The Modern Alternative: The Hybrid Approach](#the-modern-alternative-the-hybrid-approach)
 
 #### AI agents
 An agent is an autonomous software system that can perceive its environment, makes independent decisions through reasoning, takes actions using tools / APIs in multiple steps in loop to achieve a goal.
@@ -264,7 +264,7 @@ You should opt for open-source, self-hosted models when operational autonomy, st
 * Zero Rate-Limit Tolerance: If your system cannot afford to fail due to a third-party vendor's server load, network latency spikes, or sudden API rate limits.
   
 
-**The Modern Alternative: The Hybrid Approach**
+### The Modern Alternative: The Hybrid Approach
 * Many enterprises now implement smart model routing.
 * A lightweight router filters incoming queries: rudimentary or highly sensitive tasks are directed locally to a fast, cheap open-source model (like an 8B or 70B variant), while highly complex reasoning requests are escalated to a premium managed API.
 * This optimizes both cost and performance without locking the architecture into a single path. 
