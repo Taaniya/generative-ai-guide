@@ -9,6 +9,7 @@
 8. [How to build stateful experience with stateless agentic app for production?](#how-to-build-stateful-experience-with-stateless-agentic-app-for-production)
 9. [Stateful vs stateless AI agents](#stateless-vs-stateful-ai-agents)
 10. [What is MCP?](#what-is-mcp)
+11. [When to use Managed API vs Open Source LLMs?](#when-to-use-managed-api-vs-open-source-llms)
 
 
 #### AI agents
