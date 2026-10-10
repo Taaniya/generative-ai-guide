@@ -162,13 +162,13 @@ It is the persistent cognitive architecture that lets an agent -
 
 #### Short-Term Memory
 Short-term memory is volatile, immediate, and has a strict capacity limit. It is used for active processing and disappears once the current task or session concludes.
-* In-Context Memory (Working Memory): This is the primary short-term memory source. It dynamically manages the active conversation turn, recent tool outputs, and current prompt instructions within the LLM's context window.
+* **In-Context Memory (Working Memory):** This is the primary short-term memory source. It dynamically manages the active conversation turn, recent tool outputs, and current prompt instructions within the LLM's context window.
 
 #### Long-Term Memory
 Long-term memory is persistent, searchable, and retains information indefinitely across different sessions, days, or weeks. It relies on external storage like databases.
-* Episodic Memory: Used for long-term recall of experiences. It allows an agent to look back at what it did in a previous session days ago to maintain continuity.
-* Semantic Memory: Used for long-term retention of facts. It holds permanent world knowledge, company documents, or user profiles that don't change frequently.
-* Procedural Memory: Used for long-term retention of skills. It stores the permanent code, tools, and workflow rules that dictate how the agent functions.
+* **Episodic Memory:** Used for long-term recall of experiences. It allows an agent to look back at what it did in a previous session days ago to maintain continuity.
+* **Semantic Memory:** Used for long-term retention of facts. It holds permanent world knowledge, company documents, or user profiles that don't change frequently.
+* **Procedural Memory:** Used for long-term retention of skills. It stores the permanent code, tools, and workflow rules that dictate how the agent functions.
 
 ### Quick Comparison
 
