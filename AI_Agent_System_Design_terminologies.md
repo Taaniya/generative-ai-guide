@@ -301,4 +301,4 @@ Here are the key data governance areas you must consider to make the right choic
 | Operational Liability	| Transferred to the vendor (backed by an SLA).|	Replaced entirely onto your internal engineering team.|
 
 References -
-* [What is data governance for security?](https://www.microsoft.com/en-in/security/business/security-101/what-is-data-governance-for-security)
+* [What is data governance for security? - Microsoft documentation](https://www.microsoft.com/en-in/security/business/security-101/what-is-data-governance-for-security)
