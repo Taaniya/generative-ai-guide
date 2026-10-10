@@ -302,3 +302,4 @@ Here are the key data governance areas you must consider to make the right choic
 
 References -
 * [What is data governance for security? - Microsoft documentation](https://www.microsoft.com/en-in/security/business/security-101/what-is-data-governance-for-security)
+* [Principles and best practices for data governance in the cloud - Google Cloud documentation](https://cloud.google.com/blog/products/data-analytics/principles-and-best-practices-for-data-governance-in-the-cloud)
