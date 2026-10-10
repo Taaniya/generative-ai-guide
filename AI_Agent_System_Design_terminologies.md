@@ -179,6 +179,8 @@ Long-term memory is persistent, searchable, and retains information indefinitely
 | Semantic	| Long-Term	| Permanent	| Knowledge Graphs / Vector DBs |
 | Procedural	| Long-Term	| Permanent	| Code / System Prompts / Graphs|
 
+**Reference -**
+* [Article - Types of AI Agent Memory: Semantic, Episodic, Procedural, In-Context - Atlan](https://atlan.com/know/types-of-ai-agent-memory/)
 
 ## What is backpressure and Rate limiting? Why is it imposed?
 
