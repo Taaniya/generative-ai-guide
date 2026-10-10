@@ -11,7 +11,7 @@
 10. [What is MCP?](#what-is-mcp)
 11. [When to use Managed API vs Open Source LLMs?](#when-to-use-managed-api-vs-open-source-llms)
     * [The Modern Alternative: The Hybrid Approach](#the-modern-alternative-the-hybrid-approach)
-    * [Key data governance areas to consider to make the right choice](#)
+    * [Key data governance areas to consider to make the right choice](#key-data-governance-areas-to-consider-to-make-the-right-choice)
 
 ## AI agents
 An agent is an autonomous software system that can perceive its environment, makes independent decisions through reasoning, takes actions using tools / APIs in multiple steps in loop to achieve a goal.
