@@ -4,12 +4,15 @@
 3. [What is Harness engineering?](#what-is-harness-engineering)
 4. [Prompt engineering vs Context engineering vs Harness engineering](#prompt-engineering-vs-context-engineering-vs-harness-engineering)
 5. [What is agent memory?](#what-is-agent-memory)
-6. [Backpressure and rate limiting](#what-is-backpressure-and-rate-limiting-why-is-it-imposed)
-7. [Why is session state management required for agentic workflows?](why-is-session-state-management-critical-for-agentic-workflows)
-8. [How to build stateful experience with stateless agentic app for production?](#how-to-build-stateful-experience-with-stateless-agentic-app-for-production)
-9. [Stateful vs stateless AI agents](#stateless-vs-stateful-ai-agents)
-10. [What is MCP?](#what-is-mcp)
-11. [When to use Managed API vs Open Source LLMs?](#when-to-use-managed-api-vs-open-source-llms)
+   * [Memory Management in Agentic systems](#memory-management-in-agentic-systems)
+   * [Core Memory Types](#core-memory-types)
+   * [How these memory types are split between short-term and long-term purposes](#)
+7. [Backpressure and rate limiting](#what-is-backpressure-and-rate-limiting-why-is-it-imposed)
+8. [Why is session state management required for agentic workflows?](why-is-session-state-management-critical-for-agentic-workflows)
+9. [How to build stateful experience with stateless agentic app for production?](#how-to-build-stateful-experience-with-stateless-agentic-app-for-production)
+10. [Stateful vs stateless AI agents](#stateless-vs-stateful-ai-agents)
+11. [What is MCP?](#what-is-mcp)
+12. [When to use Managed API vs Open Source LLMs?](#when-to-use-managed-api-vs-open-source-llms)
     * [The Modern Alternative: The Hybrid Approach](#the-modern-alternative-the-hybrid-approach)
     * [Key data governance areas to consider to make the right choice](#key-data-governance-areas-to-consider-to-make-the-right-choice)
 
@@ -146,6 +149,35 @@ It is the persistent cognitive architecture that lets an agent -
   References -
   * [Architecting Agent Memory: Principles, Patterns, and Best Practices — Richmond Alake, MongoDB (Tech Talk)](https://youtu.be/W2HVdB4Jbjs?si=-H16PSXUBv8hzmZX)
   * [Blog - Bringing Attention To Memory In AI Agents and Agentic Systems (MongoDB)](https://www.mongodb.com/resources/basics/artificial-intelligence/agent-memory)
+
+### Core Memory Types
+* **In-Context Memory (Working Memory):** This is the agent’s active, volatile "scratchpad" (analogous to RAM or the LLM's context window). It holds the immediate conversation history, active system prompts, current scratchpad notes, and loaded files for the current task. It disappears or resets when a session ends. 
+* **Episodic Memory:** This stores specific past experiences, events, and interactions arranged with a temporal context (what happened, in what order, and when). Agents use episodic memory to recall prior user queries, individual case histories, or past multi-step mistakes so they can learn from them. It is typically implemented using vector databases or document stores with timestamps and metadata.
+* **Semantic Memory:** This represents generalized, long-term factual knowledge about the world, domain rules, business glossaries, or enterprise definitions independent of any specific personal interaction. It helps ground the agent's responses in static truths and is often stored via knowledge graphs, relational databases, or RAG (Retrieval-Augmented Generation) systems.
+* **Procedural Memory:** This encodes "how-to" knowledge, automated skills, workflows, tool-usage patterns, and routing logic. It dictates the rules or action steps the agent follows (such as code scripts, prompt-based behavior rules, or multi-step execution graphs) to prevent repetitive deliberation.
+* **Organisational or Shared Context Memory:** Frequently used in enterprise settings, this provides governed data definitions, cross-system entity identities, data lineage, and access-control policies shared across multiple agents or user sessions.
+
+
+### Here is how these memory types are split between short-term and long-term purposes:
+
+#### Short-Term Memory
+Short-term memory is volatile, immediate, and has a strict capacity limit. It is used for active processing and disappears once the current task or session concludes.
+* In-Context Memory (Working Memory): This is the primary short-term memory source. It dynamically manages the active conversation turn, recent tool outputs, and current prompt instructions within the LLM's context window.
+
+#### Long-Term Memory
+Long-term memory is persistent, searchable, and retains information indefinitely across different sessions, days, or weeks. It relies on external storage like databases.
+* Episodic Memory: Used for long-term recall of experiences. It allows an agent to look back at what it did in a previous session days ago to maintain continuity.
+* Semantic Memory: Used for long-term retention of facts. It holds permanent world knowledge, company documents, or user profiles that don't change frequently.
+* Procedural Memory: Used for long-term retention of skills. It stores the permanent code, tools, and workflow rules that dictate how the agent functions.
+
+### Quick Comparison
+
+| Memory Type	| Purpose	| Lifespan	Typical Storage|
+|---|---|---|
+| In-Context (Working)	| Short-Term	| Single Session / Task |	LLM Context Window (RAM)|
+| Episodic	| Long-Term	| Persistent (Across Sessions)	| Vector Databases (with Timestamps)|
+| Semantic	| Long-Term	| Permanent	| Knowledge Graphs / Vector DBs |
+| Procedural	| Long-Term	| Permanent	| Code / System Prompts / Graphs|
 
 
 ## What is backpressure and Rate limiting? Why is it imposed?
