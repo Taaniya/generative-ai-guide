@@ -275,7 +275,7 @@ You should opt for open-source, self-hosted models when operational autonomy, st
 When deciding between a managed API (API-as-a-Service) and a self-hosted service, data governance is one of the most critical factors. A managed API shifts the operational burden to a third party but introduces external compliance risks. A self-hosted service gives you absolute control but places the entire security, compliance, and operational burden on your team.
 Here are the key data governance areas you must consider to make the right choice:
 
-### 1. Data Residency, Sovereignty, and Compliance
+#### 1. Data Residency, Sovereignty, and Compliance
 * **Data Residency Requirements:** Some regulations (like GDPR in Europe, CCPA in California, or local banking laws) require user data to reside within specific geographic boundaries. Self-hosting allows you to pin data to precise servers, while managed APIs might route data through global data centers.
 * **Industry Regulations:** If you operate in highly regulated spaces (e.g., healthcare with **HIPAA**, finance with **PCI-DSS**), self-hosting makes it easier to audit the entire infrastructure. With a managed API, you must ensure the provider signs a Business Associate Agreement (BAA) or holds the required certifications.
 * **Audit Trails and Logging:** Data governance requires strict logs of who accessed what data and when. Self-hosting gives you raw log access. Managed APIs provide logs, but they are often aggregated or limited by retention windows unless you pay for premium tiers.
