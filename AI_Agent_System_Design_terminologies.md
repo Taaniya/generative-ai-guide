@@ -1,4 +1,4 @@
-## Concepts -
+# Concepts -
 1. [AI agents](#ai-agents)
 2. [What is Loop engineering?](#what-is-loop-engineering)
 3. [What is Harness engineering?](#what-is-harness-engineering)
@@ -11,8 +11,9 @@
 10. [What is MCP?](#what-is-mcp)
 11. [When to use Managed API vs Open Source LLMs?](#when-to-use-managed-api-vs-open-source-llms)
     * [The Modern Alternative: The Hybrid Approach](#the-modern-alternative-the-hybrid-approach)
+    * [Key data governance areas to consider to make the right choice](#)
 
-#### AI agents
+## AI agents
 An agent is an autonomous software system that can perceive its environment, makes independent decisions through reasoning, takes actions using tools / APIs in multiple steps in loop to achieve a goal.
 
 How AI Agents Work?
@@ -38,10 +39,10 @@ References:
 
 
 
-#### What is Loop engineering?
+## What is Loop engineering?
 * Loop engineering is the practice of designing automated iterative workflows where AI agents act, observe, verify, and self-correct their outputs until a goal is met, shifting the developer's role from writing single prompts to building self-governing control loops. 
 
-Core Components of Loop Engineering:
+### Core Components of Loop Engineering:
 * **Intent / Purpose:** A clearly defined user goal or target outcome that establishes the boundary of what the agent needs to achieve. 
 * **Action:** The operational step where the agent executes a task, such as writing code, calling an API, or searching a database. 
 * **Observation / Verifier:** An external evaluation mechanism or tool (like a compiler, linter, or test suite) that checks if the output satisfies the objective.
@@ -49,11 +50,11 @@ Core Components of Loop Engineering:
 * **Stopping Condition:** Explicit termination logic that stops the recursive cycle once success is reached or a compute-budget limit is hit. 
 
 
-Prompt Engineering vs. Loop Engineering -
+### Prompt Engineering vs. Loop Engineering -
 * **Prompt Engineering:** Focuses on optimizing a single instruction for a one-off model response, requiring humans to manually re-prompt upon failure.
 * **Loop Engineering:** Focuses on orchestrating the entire multi-step lifecycle, allowing the system to dynamically self-prompt and correct errors over a long-running execution
 
-Building AI agents vs loop engineering - 
+### Building AI agents vs loop engineering - 
 
 * An **AI agent** is the autonomous entity powered by a large language model that reasons and executes tasks 
 * While **loop engineering** is the architectural practice of designing the iterative control systems, triggers, and stop rules that guide that agent through multiple execution cycles.
@@ -73,18 +74,18 @@ Loop Engineering -
 References -
 * [What is Loop engineering - IBM](https://www.ibm.com/think/topics/loop-engineering)
 
-#### What is Harness engineering?
+## What is Harness engineering?
 
 * Harness engineering is the practice of building the structured environment, tools, and feedback loops around an AI model so it can run reliably as an autonomous agent.
 * Defined as Agent = Model + Harness, it moves past simple prompt or context tuning to govern execution, verify outputs, and prevent repeat mistakes
 
-Core Components:
+### Core Components:
 * Guides (Feedforward): Rules, system instructions, and architecture boundaries that steer the agent before it acts.
 * Sensors (Feedback): Custom linters, tests, and validation loops that let the agent self-correct its errors.
 * State Management: Persistent logs and file-based records so an agent recovers cleanly across sessions.
 * Tool Orchestration: Sandboxes, Model Context Protocol (MCP) servers, and sub-agent spawning that expand functional range safel
 
-Evolution Beyond Prompting:
+### Evolution Beyond Prompting:
 * Prompt Engineering: Optimizes a single response or turn.
 * Context Engineering: Manages what information fits inside the active window.
 * Harness Engineering: Designs the operational world and safety constraints for multi-hour, autonomous tasks
@@ -98,29 +99,29 @@ References -
 * [How to build a better agent harness with traces and evals](https://arize.com/blog/improve-ai-agents-traces-evals-harness/)
 
 
-#### Prompt engineering vs Context engineering vs Harness engineering
+## Prompt engineering vs Context engineering vs Harness engineering
 Prompt engineering, context engineering, and harness engineering represent three progressive layers of applied AI development. Prompt engineering shapes model behavior through instruction text, context engineering curates the knowledge and data fed into the window, and harness engineering builds the outer operational system and controls for safety and reliability
 
-Prompt Engineering -
+### Prompt Engineering -
 * **Focuses on** the precise wording, role assignments, tone constraints, and few-shot examples of a single interaction.
 * **Asks the question:** "How should I phrase this instruction so the model understands what to do?"
 * **Operates at** the text and message level.
 * **Fails when** the wording is ambiguous or instructions conflict
 
-Context Engineering -
+### Context Engineering -
 * **Focuses on** managing the information ecosystem, memory, retrieval results (RAG), and tool outputs loaded into the model's window.
 * **Asks the question:** "What exact data, files, or background facts does the model need to see right now?"
 * **Operates at** the data architecture and token management level.
 * **Fails when** data is stale, irrelevant, or causes context rot/overflow
 
 
-Harness Engineering -
+### Harness Engineering -
 * **Focuses on** the deterministic software scaffolding, execution loops, permissions, sandboxes, and human-in-the-loop approval gates surrounding the AI agent.
 * **Operates at** the system infrastructure and workflow governance level.
 * **Fails when** the system lacks proper retries, evaluation loops, or safety guardrails.
 
 
-Key Differences:
+### Key Differences:
 | Dimension |	Prompt Engineering	| Context Engineering |	Harness Engineering |
 |:--------:|:--------:|:--------:|:--------:|
 | Core Focus|	Instructions & Behavior	| Knowledge & Memory	| Control & System Reliability |
@@ -132,13 +133,13 @@ References -
 * [Harness Engineering vs Prompt Engineering vs Context Engineering - Atlan](https://atlan.com/know/harness-engineering-vs-prompt-engineering/)
   
 
-#### What is Agent Memory?
+## What is Agent Memory?
 It is the persistent cognitive architecture that lets an agent -
 * accumulate knowledge
 * maintain contextual awareness
 * adapt its behavior based on historical interactions and learned experiences
 
-Memory Management in Agentic systems -
+### Memory Management in Agentic systems -
 * Memory makes agents reliable, capable and believable
 * Memory management refers to systemic organization, persistence and retrieval of different types of information needed by an agent to function effectively across interactions and sessions.
 
@@ -147,25 +148,25 @@ Memory Management in Agentic systems -
   * [Blog - Bringing Attention To Memory In AI Agents and Agentic Systems (MongoDB)](https://www.mongodb.com/resources/basics/artificial-intelligence/agent-memory)
 
 
-#### What is backpressure and Rate limiting? Why is it imposed?
+## What is backpressure and Rate limiting? Why is it imposed?
 
 * In agentic systems—AI architectures where autonomous agents use tools, call APIs, and reason over multiple steps—backpressure and rate limiting are critical flow-control mechanisms
 used to prevent system failures, manage API costs, and handle uneven workloads.
 * They ensure that agents do not overwhelm downstream services (like LLM providers or databases) with more requests than they can process.
 
-**What is AI agent rate limiting?**
+### What is AI agent rate limiting?**
 * AI agent rate limiting involves controlling how frequently agents make API calls, access resources, and consume credits to prevent service disruptions, manage costs, and stay within provider quotas.
 
-LLM API vs AI agent rate limiting?
+### LLM API vs AI agent rate limiting?
 
-LLM API rate limits -
+#### LLM API rate limits -
 
 * LLM API rate limits (e.g., GPT-4, Claude) focus on protecting infrastructure, restricting RPM (requests per minute) and TPM (tokens per minute)
 * These are enforced at provider side to protect GPUs, prevent abuse, ensure stability.
 * Metrics: Rigid limits on RPM, TPM, and concurrent requests
 * LLM API limits are about system capacity (how many requests to the model)
 
-AI Agent Rate Limits (Application/Agent Side) -
+#### AI Agent Rate Limits (Application/Agent Side) -
 * Agent rate limits are more dynamic, managing autonomous, multi-step workflows that generate unpredictable bursts of traffic, often requiring context-aware, adaptive rate limiting (ARL) rather than simple thresholds
 * Goal: Manage budget, control complex, multi-step reasoning processes, and prevent runaway agents.
 * Metrics: More granular; often tracks tokens per agent, total tokens per task, and cost per workflow.
@@ -177,13 +178,13 @@ References -
 * [How AI Agents Are Changing API Rate Limit Approaches](https://nordicapis.com/how-ai-agents-are-changing-api-rate-limit-approaches/#:~:text=Traditional%20approaches%20to%20rate%20limiting,indicating%20a%20typical%20DDoS%20attack)
 
 
-#### Why is session state management critical for agentic workflows?
+## Why is session state management critical for agentic workflows?
 * Allows agents to track goals across interactions
 * Enables coherent conversations, interactions, retain context, provide personalized experiences
 * Without state management, each prompt is handled in isolation, making it impossible for the agent to refer prior context, track ongoing tasks.
 
 
-#### How to build stateful experience with stateless agentic app for production?
+## How to build stateful experience with stateless agentic app for production?
 * Since cloud environments, need applications to be stateless and scalable, the solution is to externalize state to a persitent storage
 * This lets an agent to reconstruct prior context e.g., build conversation history on demand, delivering a seamless stateful experience while keeping the agentic app itself stateless for scalability and resilience.
 
@@ -191,7 +192,7 @@ Reference -
 * [Effectively building AI agents on AWS Serverless](https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-memory-building-context-aware-agents/#:~:text=The%20memory%20problem%20in%20AI%20agents&text=When%20implementing%20memory%20for%20AI,patterns%20that%20matter%20to%20users.)
 * [Amazon Bedrock AgentCore Memory: Building context-aware agents](https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-memory-building-context-aware-agents/#:~:text=The%20memory%20problem%20in%20AI%20agents&text=When%20implementing%20memory%20for%20AI,patterns%20that%20matter%20to%20users.)
 
-#### Stateless vs stateful AI agents
+## Stateless vs stateful AI agents
 Stateful AI agents -
 * Stateful AI agents retain memory of past interactions (context) to inform future decisions, allowing for context-aware, complex, multi-turn, and personalized tasks/ conversations over time
 
@@ -215,7 +216,7 @@ Key differences -
 **References -**
 * https://tacnode.io/post/stateful-vs-stateless-ai-agents-practical-architecture-guide-for-developers
 
-#### What is MCP?
+## What is MCP?
 * MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems.
 * Using MCP, AI applications like Claude or ChatGPT can connect to data sources (e.g. local files, databases), tools (e.g. search engines, calculators) and workflows (e.g. specialized prompts)—enabling them to access key information and perform tasks.
 
@@ -235,7 +236,7 @@ References:
 * Tutorial - [Deep dive into MCP, Gaurav Sen](https://youtu.be/uBL0siiliGo?si=5KGcbqi09vLhhZNa)
 * [Writing effective tools for agents — with agents - Anthropic, Sept 2025](https://www.anthropic.com/engineering/writing-tools-for-agents)
 
-### When to use Managed API vs Open Source LLMs?
+## When to use Managed API vs Open Source LLMs?
 * The decision between using a Managed LLM API (like OpenAI's GPT-4o, Anthropic's Claude, or Google Gemini) and hosting an Open-Source LLM (like Meta's Llama, Mistral, or Alibaba's Qwen) boils down to a trade-off between speed, control, data privacy, and scale.
 * As a general rule of thumb, most teams should start with a managed LLM API to build prototypes and prove market fit quickly, then migrate to open-source models only when specific cost, privacy, or architectural scale thresholds are met.
 
@@ -249,7 +250,7 @@ References:
 | Customization | Limited to basic prompt engineering and light fine-tuning | Full access to modify model weights, tokenizers, and architectures|
 
 
-#### When to Use a Managed LLM API?
+### When to Use a Managed LLM API?
 You should choose a managed provider if your priority is agility and utilizing the most advanced frontier models available.
 * Prototyping and MVPs: When you need a proof-of-concept running immediately without investing weeks in infrastructure setup.
 * Highest-Tier Reasoning & Multimodal Needs: If your application requires cutting-edge mathematical reasoning, complex coding tasks, or highly mature, production-ready multimodal features (text + image + audio).
@@ -268,3 +269,36 @@ You should opt for open-source, self-hosted models when operational autonomy, st
 * Many enterprises now implement smart model routing.
 * A lightweight router filters incoming queries: rudimentary or highly sensitive tasks are directed locally to a fast, cheap open-source model (like an 8B or 70B variant), while highly complex reasoning requests are escalated to a premium managed API.
 * This optimizes both cost and performance without locking the architecture into a single path. 
+
+
+### Key data governance areas to consider to make the right choice
+When deciding between a managed API (API-as-a-Service) and a self-hosted service, data governance is one of the most critical factors. A managed API shifts the operational burden to a third party but introduces external compliance risks. A self-hosted service gives you absolute control but places the entire security, compliance, and operational burden on your team.
+Here are the key data governance areas you must consider to make the right choice:
+
+### 1. Data Residency, Sovereignty, and Compliance
+* **Data Residency Requirements:** Some regulations (like GDPR in Europe, CCPA in California, or local banking laws) require user data to reside within specific geographic boundaries. Self-hosting allows you to pin data to precise servers, while managed APIs might route data through global data centers.
+* **Industry Regulations:** If you operate in highly regulated spaces (e.g., healthcare with **HIPAA**, finance with **PCI-DSS**), self-hosting makes it easier to audit the entire infrastructure. With a managed API, you must ensure the provider signs a Business Associate Agreement (BAA) or holds the required certifications.
+* **Audit Trails and Logging:** Data governance requires strict logs of who accessed what data and when. Self-hosting gives you raw log access. Managed APIs provide logs, but they are often aggregated or limited by retention windows unless you pay for premium tiers.
+
+#### 2. Data Security, Privacy, and Ownership
+* **Data Ownership and Usage Rights:** Read the managed provider’s Terms of Service closely. Do they use your API payloads, prompts, or metadata to train their own AI models or improve their services? Self-hosting ensures your intellectual property and data never leave your network boundaries.
+* **Encryption Key Management:** With a self-hosted service, you can implement BYOK (Bring Your Own Key) or manage your own encryption keys at rest and in transit. Managed APIs control the encryption infrastructure, meaning you have to trust their key management systems.
+* **Attack Surface:** Managed APIs expose data to the public internet (even if encrypted). Self-hosted services can be completely locked down within a private network or VPC (Virtual Private Cloud) with no public internet ingress.
+
+#### 3. Service Availability and Data Lifecycle
+
+* **Vendor Lock-in and Data Portability:** If a managed provider changes their API, hikes prices, or shuts down, how easily can you extract your data or switch? Self-hosted solutions use open-source or commercial software that you control, making long-term data preservation easier.
+* **Data Retention and Deletion:** Data governance mandates strict data destruction policies (e.g., deleting user data after 30 days). A self-hosted database allows you to run automated deletion scripts. With a managed API, you rely on the vendor's promise that cached data or logs are actually purged.
+
+#### 4. Direct Comparison
+
+|Governance Dimension	| Managed API	| Self-Hosted Service|
+|---|---|---|
+| Regulatory Compliance | Dependent on vendor compliance and certifications.	| Fully controlled and auditable by your team.|
+| Data Perimeter	| Data travels outside your network to a third party.	| Data stays entirely within your controlled infrastructure.|
+| Audit & Logging	| Vendor-defined formats and retention periods.	| Unlimited, granular logging controlled by you.|
+| Data Privacy (AI/LLMs)	| Risk of data being used for model training.	| Complete privacy; data is never shared. |
+| Operational Liability	| Transferred to the vendor (backed by an SLA).|	Replaced entirely onto your internal engineering team.|
+
+References -
+* [What is data governance for security?](https://www.microsoft.com/en-in/security/business/security-101/what-is-data-governance-for-security)
