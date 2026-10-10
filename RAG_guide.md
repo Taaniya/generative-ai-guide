@@ -1,3 +1,12 @@
+# Retrieval
+1. [Article - Best embedding models in May 2026 (Future AGI)](https://futureagi.com/blog/best-embedding-models-2025/)
+2. [Article - Embedding model comparison table, 26 September 2026](https://www.maximem.ai/blog/best-embedding-models-2026)
+3. [How to choose an embedding model in 2026: a decision matrix - Future AGI](https://futureagi.com/blog/best-embedding-models-2025/#how-to-choose-an-embedding-model-in-2026-a-decision-matrix)
+4. [How to evaluate embedding models for your workload - Future AGI](https://futureagi.com/blog/best-embedding-models-2025/#how-to-evaluate-embedding-models-for-your-workload)
+
+
+
+
 # RAG
 * [RAG solution design and evaluation guide - Microsoft](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-solution-design-and-evaluation-guide)
 * [Blog - Improving Retrieval and RAG with Embedding Model Finetuning (Databricks)](https://www.databricks.com/blog/improving-retrieval-and-rag-embedding-model-finetuning)
