@@ -194,6 +194,7 @@ Reference:
 25. Langchain tutorials -
     * [Beginner's Guide to Agent Evaluations (Jan,2025)](https://youtu.be/_QozKR9eQE8?si=IRDimZnk5YmfVU4L)
     * [How to Evaluate Document Extraction](https://youtu.be/zguxPRmFzxw?si=BVfMuja6or2kRtyy)
+26. [Evaluation best practices - OpenAI docs](https://developers.openai.com/api/docs/guides/evaluation-best-practices?api-mode=responses)
 
 
 # Eval Frameworks 
