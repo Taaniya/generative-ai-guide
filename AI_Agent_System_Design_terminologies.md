@@ -337,3 +337,6 @@ Here are the key data governance areas you must consider to make the right choic
 References -
 * [What is data governance for security? - Microsoft documentation](https://www.microsoft.com/en-in/security/business/security-101/what-is-data-governance-for-security)
 * [Principles and best practices for data governance in the cloud - Google Cloud documentation](https://cloud.google.com/blog/products/data-analytics/principles-and-best-practices-for-data-governance-in-the-cloud)
+* [Data Governance for AI: Framework & Best Practices 2026 - Atlan](https://atlan.com/know/data-governance/for-ai/)
+* [What is data governance in banking? - IBM](https://www.ibm.com/think/topics/data-governance-in-banking)
+* [AI Governance Best Practices: How to Build Responsible and Effective AI Programs - Databricks](https://www.databricks.com/blog/ai-governance-best-practices-how-build-responsible-and-effective-ai-programs)
