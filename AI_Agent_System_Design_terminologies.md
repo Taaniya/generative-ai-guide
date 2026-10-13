@@ -188,7 +188,7 @@ Long-term memory is persistent, searchable, and retains information indefinitely
 used to prevent system failures, manage API costs, and handle uneven workloads.
 * They ensure that agents do not overwhelm downstream services (like LLM providers or databases) with more requests than they can process.
 
-### What is AI agent rate limiting?**
+### What is AI agent rate limiting?
 * AI agent rate limiting involves controlling how frequently agents make API calls, access resources, and consume credits to prevent service disruptions, manage costs, and stay within provider quotas.
 
 ### LLM API vs AI agent rate limiting?
