@@ -340,3 +340,4 @@ References -
 * [Data Governance for AI: Framework & Best Practices 2026 - Atlan](https://atlan.com/know/data-governance/for-ai/)
 * [What is data governance in banking? - IBM](https://www.ibm.com/think/topics/data-governance-in-banking)
 * [AI Governance Best Practices: How to Build Responsible and Effective AI Programs - Databricks](https://www.databricks.com/blog/ai-governance-best-practices-how-build-responsible-and-effective-ai-programs)
+* [Securing your agents with authentication and authorization](https://www.langchain.com/blog/agent-authorization-explainer)
