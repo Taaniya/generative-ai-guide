@@ -15,6 +15,7 @@
 12. [When to use Managed API vs Open Source LLMs?](#when-to-use-managed-api-vs-open-source-llms)
     * [The Modern Alternative: The Hybrid Approach](#the-modern-alternative-the-hybrid-approach)
     * [Key data governance areas to consider to make the right choice](#key-data-governance-areas-to-consider-to-make-the-right-choice)
+13. [What is PII redaction?](#what-is-pii-redaction)
 
 ## AI agents
 An agent is an autonomous software system that can perceive its environment, makes independent decisions through reasoning, takes actions using tools / APIs in multiple steps in loop to achieve a goal.
@@ -341,3 +342,25 @@ References -
 * [What is data governance in banking? - IBM](https://www.ibm.com/think/topics/data-governance-in-banking)
 * [AI Governance Best Practices: How to Build Responsible and Effective AI Programs - Databricks](https://www.databricks.com/blog/ai-governance-best-practices-how-build-responsible-and-effective-ai-programs)
 * [Securing your agents with authentication and authorization](https://www.langchain.com/blog/agent-authorization-explainer)
+
+
+
+## What is PII redaction?
+PII redaction is the process of identifying, removing, or obscuring Personally Identifiable Information (PII)—such as names, phone numbers, email addresses, and financial data—from documents, audio transcripts, databases, or digital records. 
+
+### What is PII?
+PII is any data that can identify a specific individual, either by itself or when combined with other details. Common examples include:
+  * **Direct identifiers:** Full names, home addresses, Social Security numbers (SSNs), phone numbers, email addresses, and driver's license numbers.
+  * **Financial and medical data:** Credit card numbers, bank account numbers, and medical record numbers. 
+
+### How Redaction Works
+* **Detection:** Automated software (using AI, pattern matching, or named entity recognition) or manual review scans text, audio, or images to find sensitive data points.
+* **Replacement or Removal:** The identified PII is deleted, replaced with black bars, substituted with generic markers like [REDACTED], or masked with symbols.
+* **Permanence:** True redaction is typically permanent and irreversible, ensuring the original sensitive data cannot be recovered from the published or stored file. 
+
+### Why It Matters
+* **Regulatory Compliance:** It helps organizations meet data privacy laws such as GDPR, HIPAA, FERPA, and FOIA.
+* **Security & Risk Reduction:** It minimizes the fallout of a data breach by ensuring sensitive customer or employee details never sit in plain text where they shouldn't.
+* **Safe Sharing:** It allows companies to share logs, transcripts, or public documents safely without leaking private records.
+
+  
