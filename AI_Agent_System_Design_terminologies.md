@@ -254,15 +254,35 @@ Key differences -
 ## What is MCP?
 * MCP (Model Context Protocol) is an open-source standard for connecting AI applications to external systems.
 * Using MCP, AI applications like Claude or ChatGPT can connect to data sources (e.g. local files, databases), tools (e.g. search engines, calculators) and workflows (e.g. specialized prompts)—enabling them to access key information and perform tasks.
+* While direct tool use (like hardcoded function calling or custom API integrations) works well for isolated, single-app scripts, MCP **solves specific architectural and scaling problems** that direct tool use creates
 
-Architecture:
+### Architecture:
 * MCP follows a client-server architecture where an MCP host — an AI application like Claude Code or Claude Desktop — establishes connections to one or more MCP servers.
 * The MCP host accomplishes this by creating one MCP client for each MCP server. Each MCP client maintains a dedicated connection with its corresponding MCP server.
 
-The key participants in the MCP architecture are:
+### The key participants in the MCP architecture are:
 * **MCP Host:** The AI application that coordinates and manages one or multiple MCP clients
 * **MCP Client:** A component that maintains a connection to an MCP server and obtains context from an MCP server for the MCP host to use
 * **MCP Server:** A program that provides context to MCP clients
+
+### What Problem Direct Tool Use Fails to Solve
+1. **The N × M Integration Explosion (Lack of Standardization)**
+    * **Direct Tool Use:** If you have **N** AI applications (e.g., Claude, a custom enterprise bot, an IDE assistant) and **M** external tools (e.g., GitHub, Jira, Slack, PostgreSQL), you have to write and maintain **N × M** custom integrations, custom authentication handlers, and tool wrappers.
+    * **MCP Solution:** MCP acts as a universal adapter layer. You write an MCP server for a tool once, and any MCP-compliant AI client can immediately discover and use it. For **N** apps and **M** services, you only need **N clients + M servers**.
+
+2. **Lack of Dynamic Tool Discovery**
+    * **Direct Tool Use:** Tools must be statically written, defined, and hardcoded into the application code or baked into the prompt's initial setup. If a tool updates its schema or a new tool is added, you have to rewrite and re-deploy the application code.
+    * **MCP Solution:** MCP clients can dynamically discover available tools, resources, and schemas from an MCP server **at runtime**.
+
+3. **Scattered and Inconsistent Error Handling & Context Management**
+    * **Direct Tool Use:** APIs return raw HTTP status codes or messy payloads that the LLM often misinterprets, and state/session management across multi-turn tool calls is left entirely up to the developer to stitch together.
+    * **MCP Solution:** MCP provides a structured, semantic feedback and protocol layer (via JSON-RPC over stdio, HTTP SSE, or WebSockets) so agents receive clear, actionable responses.
+
+4. **Decoupling Business Logic from the LLM Context Window**
+    * **Direct Tool Use:** Complex multi-step workflows often force developers to stuff heavy orchestration logic, API wrappers, or prompt chains directly into the AI's context or system prompt.
+    * **MCP Solution:** MCP shifts complex execution layers and business workflows out of the prompt and into the modular MCP server, keeping the AI focused on decision-making rather than plumbing.
+
+
 
 References:
 * What is it? - https://modelcontextprotocol.io/docs/getting-started/intro
