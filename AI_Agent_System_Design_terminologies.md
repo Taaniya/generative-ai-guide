@@ -282,10 +282,20 @@ Key differences -
     * **Direct Tool Use:** Complex multi-step workflows often force developers to stuff heavy orchestration logic, API wrappers, or prompt chains directly into the AI's context or system prompt.
     * **MCP Solution:** MCP shifts complex execution layers and business workflows out of the prompt and into the modular MCP server, keeping the AI focused on decision-making rather than plumbing.
 
+### Key Advantages of MCP
+  * **Universal Interoperability:** Use a single client-server protocol across multiple LLMs, IDEs, and agent frameworks without rewriting integrations.
+  * **Modular Architecture:** Databases, internal SaaS apps, and local file systems can be exposed as plug-and-play MCP servers.
+  * **Language & Transport Agnostic:** Built with support for multiple SDKs (Python, TypeScript, Java, C#) and transport methods like stdio, HTTP SSE, and WebSockets.
+Ecosystem Growth: Backed by a rapidly growing library of pre-built community and enterprise servers.
 
+### When to Skip MCP
+  * If you are building a single application that only needs to call a couple of known local APIs or CLI commands, writing a direct integration or executing standard CLI tools can be lighter and simpler than setting up an MCP server infrastructure
 
-References:
-* What is it? - https://modelcontextprotocol.io/docs/getting-started/intro
+### References:
+* [Introducing the Model Context Protocol - Anthropic release news](https://www.anthropic.com/news/model-context-protocol)
+* [What is it? - Anthropic](https://modelcontextprotocol.io/docs/getting-started/intro)
+* [Blog - Code execution with MCP: Building more efficient agents - Anthropic](https://www.anthropic.com/engineering/code-execution-with-mcp)
+* [Watch on YouTube - The Model Context Protocol: Connecting AI to Everything - Adam Jones, Anthropic (Talk by MCP's lead development engineer)](https://youtu.be/T4-BdZQUCSE?si=clDQymi9wTGs9R0-)
 * DeepLearning.AI Course - [MCP: Build Rich-Context AI Apps with Anthropic](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/information)
 * Anthropic blog - [Introducing MCP, Nov 2024](https://www.anthropic.com/news/model-context-protocol)
 * Tutorial - [Deep dive into MCP, Gaurav Sen](https://youtu.be/uBL0siiliGo?si=5KGcbqi09vLhhZNa)
