@@ -297,7 +297,6 @@ Ecosystem Growth: Backed by a rapidly growing library of pre-built community and
 * [Blog - Code execution with MCP: Building more efficient agents - Anthropic](https://www.anthropic.com/engineering/code-execution-with-mcp)
 * [Watch on YouTube - The Model Context Protocol: Connecting AI to Everything - Adam Jones, Anthropic (Talk by MCP's lead development engineer)](https://youtu.be/T4-BdZQUCSE?si=clDQymi9wTGs9R0-)
 * DeepLearning.AI Course - [MCP: Build Rich-Context AI Apps with Anthropic](https://learn.deeplearning.ai/courses/mcp-build-rich-context-ai-apps-with-anthropic/information)
-* Anthropic blog - [Introducing MCP, Nov 2024](https://www.anthropic.com/news/model-context-protocol)
 * Tutorial - [Deep dive into MCP, Gaurav Sen](https://youtu.be/uBL0siiliGo?si=5KGcbqi09vLhhZNa)
 * [Writing effective tools for agents — with agents - Anthropic, Sept 2025](https://www.anthropic.com/engineering/writing-tools-for-agents)
 
