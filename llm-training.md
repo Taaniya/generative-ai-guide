@@ -7,5 +7,9 @@
 * Nvidia article - https://www.nvidia.com/en-us/glossary/synthetic-data-generation/
 
 
+#### Courses
+1. [Generative AI with Large Language Models - DeepLearning.AI](https://www.deeplearning.ai/courses/generative-ai-with-llms)
+2. [Fine-tuning Text Models with PEFT - Coursera](https://www.coursera.org/learn/fine-tuning-text-models-with-peft)
+   
 
 
