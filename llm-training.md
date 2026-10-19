@@ -10,6 +10,7 @@
 #### Courses
 1. [Generative AI with Large Language Models - DeepLearning.AI](https://www.deeplearning.ai/courses/generative-ai-with-llms)
 2. [Fine-tuning Text Models with PEFT - Coursera](https://www.coursera.org/learn/fine-tuning-text-models-with-peft)
+3. [Fine-Tuning & Optimizing Large Language Models - Coursera](https://www.coursera.org/learn/fine-tuning-optimizing-large-language-models)
    
 
 
