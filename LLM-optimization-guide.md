@@ -8,69 +8,73 @@
 * [Speculative decoding](#speculative-decoding)
 * [What are the different hardware and infrastructure optimizations for LLM inference?](#what-are-the-different-hardware-and-infrastructure-optimizations-for-llm-inference)
 
-### How does LLM inference work?
+# How does LLM inference work?
 * LLM inference is the process of using a trained AI model to generate text or answers based on an input prompt.
 * It works in two main stages:
    * **The Prefill Phase:** The model reads your entire input prompt all at once. It processes all input tokens (word pieces) in parallel and builds a memory bank called the KV cache (Key-Value cache) to remember the context.
 
    * **The Decoding Phase:** The model generates the output text autoregressively—meaning it creates one token at a time. Each new token depends on the previous ones. Because it must load the entire model weights from memory for every single word generated, this phase is slow and memory-heavy.
 
-### What are the techniques to optimize inference in production?
+# What are the techniques to optimize inference in production?
 * To lower latency (speed up responses) and reduce cost (save computing power), production systems use several key strategies.
 * To run LLMs in production efficiently, optimization strategies target either reducing memory footprint or maximizing hardware utilization.
 
 
-1. Serving and Architectural Optimizations
-* PagedAttention:
-   * Manages GPU memory for the KV cache like an operating system manages computer RAM.
-   * Eliminates memory fragmentation and allows many more concurrent users without running out of space.
-
-2. Continuous Batching (Dynamic Batching):
-   * Groups incoming requests from different users together on the fly.
-   * Replaces idle GPU time with active computing, maximizing hardware efficiency.
+## 1. Serving and Architectural Optimizations
+   * **PagedAttention:**
+      * Manages GPU memory for the KV cache like an operating system manages computer RAM.
+      * Eliminates memory fragmentation and allows many more concurrent users without running out of space.
    
-3. Prompt Caching:
-   * Saves the KV cache of frequently used text (like long system instructions or codebases).
-   * Stops the GPU from re-reading the same text for every new user request.
+   * **Continuous Batching (Dynamic Batching):**
+      * Groups incoming requests from different users together on the fly.
+      * Replaces idle GPU time with active computing, maximizing hardware efficiency.
+      
+   * **Prompt Caching:**
+      * Saves the KV cache of frequently used text (like long system instructions or codebases).
+      * Stops the GPU from re-reading the same text for every new user request.
+   
+   * **Speculative Decoding:**
+      * Pairs a small, fast "draft" model with a large, slow "target" model.
+      * The small model guesses the next few words quickly, and the big model checks them all in one single step.
 
-4. Speculative Decoding:
-   * Pairs a small, fast "draft" model with a large, slow "target" model.
-   * The small model guesses the next few words quickly, and the big model checks them all in one single step.
+   * **KV Cache Quantization:**
+      * Downsamples the stored Key-Value vectors from FP16 to INT8 or INT4.
+      * This allows long-context applications to fit into GPU memory without triggering Out-Of-Memory (OOM) errors.
 
-5. KV Cache Quantization:
-   * Downsamples the stored Key-Value vectors from FP16 to INT8 or INT4.
-   * This allows long-context applications to fit into GPU memory without triggering Out-Of-Memory (OOM) errors.
-
-6. Optimizing the attention mechanism:
-   * Multi-query attention (2019):
+## 2. Optimizing the attention mechanism:
+   * **Multi-query attention (2019):**
       * Multi-query attention (MQA) uses many query heads and a single key-value head; i.e., key and value vectors are shared among the multiple attention heads, while the query vector is still projected multiple times as before, as in Multi-head attention (MHA).
       * While the amount of computation done in MQA is identical to MHA, the amount of data (keys, values) read from memory is a fraction of before.
       * When bound by memory bandwidth, this enables better compute utilization.
       * It also reduces the size of the KV-cache in memory, allowing space for larger batch sizes.
       * **Limitation -** The reduction in key-value heads comes with a potential accuracy drop
-   * Grouped-query attention (GQA,2023):
+   
+   * **Grouped-query attention (GQA,2023):**
       * GQA strikes a balance between MHA and MQA by projecting key and values to a few groups of query heads. Within each of the groups, it behaves like multi-query attention.
       * This is a balance between memory requirements and model quality
       * E.g., Llama 2 70B uses GQA
-   * Flash attention (2013):
+   
+   * **Flash attention (2013):**
      * An algorithm that optimizes the attention mechanism at the hardware level.
      * It reduces the number of memory reads/writes between the GPU's slow HBM and fast SRAM, speeding up the prefill phase and handling long contexts gracefully.
      * It is an IO-aware exact attention algorithm that splits inputs into blocks fitting into fast GPU on-chip SRAM to mitigate memory bandwidth bottlenecks
-7. Model optimization:
-   * Quantization:
+
+## 3. Model optimization:
+   * **Quantization:**
      * Quantization is the process of reducing the precision of a model’s weights and activations.
      * Most models are trained with 32 or 16 bits of precision, where each parameter and activation element takes up 32 or 16 bits of memory—a single-precision floating point. However, most deep learning models can be effectively represented with eight or even fewer bits per value.  
      * Reduces memory usage drastically and speeds up math calculations with little loss in accuracy.
-   * Pruning and Sparsity:
+   
+   * **Pruning and Sparsity:**
      * Removes redundant or less important weights from the network, reducing the overall parameter count that needs to be calculated.
      * It’s been shown that many deep learning models are robust to pruning, or replacing certain values that are close to 0 with 0 itself.
      * Sparse matrices are matrices where many of the elements are 0. These can be expressed in a condensed form that takes up less space than a full, dense matrix.
 
-   * Knowledge distillation:
+   * **Knowledge distillation:**
       * Another approach to shrinking the size of a model is to transfer its knowledge to a smaller model through a process called distillation. This process involves training a smaller model (called a student) to mimic the behavior of a larger model (a teacher).
 
 
-#### Direct Comparison of Optimization Impact
+## Direct Comparison of Optimization Impact
 
 |Technique	| Primary Benefit	| Latency Reduction	| Cost Reduction	| Complexity |
 |----|----|----|----|----|
@@ -80,8 +84,7 @@
 | FlashAttention	| Accelerates Prefill Phase	| High (Long contexts)	| Low	| Low (Native in modern LLMs) |
 
 
-
-References and further readings -
+## References and further readings -
 * [Mastering LLM Techniques: Inference Optimization, Nvidia (Nov, 2023)](https://developer.nvidia.com/blog/mastering-llm-techniques-inference-optimization/)
 * [(Multi-Query Attention) Fast Transformer Decoding: One Write-Head is All You Need, 2019](https://arxiv.org/pdf/1911.02150)
 * [Grouped Query Attention: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints](https://arxiv.org/pdf/2305.13245v2)
