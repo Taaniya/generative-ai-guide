@@ -14,7 +14,8 @@
 2. [Fine-tuning Text Models with PEFT - Coursera](https://www.coursera.org/learn/fine-tuning-text-models-with-peft)
 3. [Fine-Tuning & Optimizing Large Language Models - Coursera](https://www.coursera.org/learn/fine-tuning-optimizing-large-language-models)
 4. [Fine-Tune Your Own LLM: LoRA, QLoRA & PEFT - Coursera](https://www.coursera.org/learn/fine-tune-your-own-llm-lora-qlora--peft)
-   
+5. [Track and Evaluate ML Model Experiments - Coursera](https://www.coursera.org/learn/track-and-evaluate-ml-model-experiments)
+6. [ML Model Development and Tracking: Hands-on Guide - Coursera](https://www.coursera.org/learn/model-development-experiment-tracking-for-mlops)
    
 
 
