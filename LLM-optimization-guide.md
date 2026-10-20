@@ -130,6 +130,7 @@ Reference -
 ### What is PagedAttention (for KV Cache)
 * **Problem with old approach:** Previous methods reserved one large, contiguous memory block per request, sized for the maximum possible context length — resulting in 60–80% wasted memory, since most requests don't use their full context.
 * PagedAttention's solution: Splits the KV cache into small, fixed-size blocks that can be placed non-contiguously anywhere in GPU memory (similar to virtual memory paging in OS design).
+  
 **Result:** Significantly more concurrent requests can be served on the same GPU hardware.
 
 * Find more details on how it works [here](https://github.com/Taaniya/deeplearning-ai-course-fast-and-efficient-llm-inference-with-vllms/blob/main/L5_Serving_LLMs_Efficiently_with_vLLM_Part_1.md#5-pagedattention)
