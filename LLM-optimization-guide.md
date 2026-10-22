@@ -224,6 +224,7 @@ Both the Self-Attention block and FFN are built from **linear layers**.
 Documentation & Tutorials -
 * [Quantization - Pytorch](https://docs.pytorch.org/docs/stable/quantization.html)
 * [Git repo - Torchao: PyTorch-Native Training-to-Serving Model Optimization](https://github.com/pytorch/ao)
+* [Quantization - Hugging Face developer guide](https://huggingface.co/docs/peft/en/developer_guides/quantization)
 
 ### Speculative decoding
 In speculative decoding, the logits for the small (draft) and large (target) models come from **separate forward passes** of each respective model over the current context sequence.
