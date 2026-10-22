@@ -7,9 +7,10 @@
 
 
 
-# RAG
+# RAG references
 * [RAG solution design and evaluation guide - Microsoft](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-solution-design-and-evaluation-guide)
 * [Blog - Improving Retrieval and RAG with Embedding Model Finetuning (Databricks)](https://www.databricks.com/blog/improving-retrieval-and-rag-embedding-model-finetuning)
+* [RAG from scratch - LangChain Git Repo for RAG](https://github.com/langchain-ai/rag-from-scratch/tree/main)
 
 # Contents
 * [Chunking strategies](#chunking-strategies)
